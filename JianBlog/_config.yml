@@ -102,6 +102,6 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://gitee.com/jianke3821/JianBlog.git
+  repo: https://github.com/jian134/jianBlog.git
   branch: gh-pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
