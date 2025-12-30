@@ -70,6 +70,18 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+# Category Generator
+category_generator:
+  per_page: 10
+  order_by: -name
+  enable_index_page: true
+
+# Tag Generator  
+tag_generator:
+  per_page: 10
+  order_by: -name
+  enable_index_page: true
+
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true
