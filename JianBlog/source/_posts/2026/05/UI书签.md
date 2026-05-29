@@ -18,7 +18,7 @@ tags: AI,UI,claude
 | 七 | Lexica | Stable Diffusion 提示词搜索引擎，海量 AI 生成图像参考 | [https://lexica.art](https://lexica.art) |
 | 八 | Aura | AI Website Builder，AI 驱动落地页生成，支持导出 HTML & Figma | [https://www.aura.build](https://www.aura.build) |
 | 九 | UI UX Pro Max Skill | 专为 Claude Code、Cursor、Windsurf 等 AI 助手打造的 Agent Skills，提供 67 种 UI 风格、161 种配色方案、57 种字体搭配、99 条 UX 指南 | [https://ui-ux-pro-max-skill.com](https://ui-ux-pro-max-skill.com) |
-| 十 | UI Inspiration（@RyanVan 投稿） | Notion 整理的 UI 灵感合集 | 待补充链接 |
+| 十 | UI Inspiration（@RyanVan 投稿） | Notion 整理的 UI 灵感合集 | [https://uxchi.notion.site/UI-Inspiration-881b4c0179a74935a3f607ad3521cdb5] |
 | 十一 | Nano Banana Pro 免费提示词库（@shinobiyang 投稿） | Nano Banana Pro 提示词合集 | [https://youmind.com/zh-CN/nano-banana-pro-prompts](https://youmind.com/zh-CN/nano-banana-pro-prompts) |
  
  
