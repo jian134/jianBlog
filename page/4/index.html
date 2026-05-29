@@ -1,0 +1,287 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Jian-Blog - 记录生活与技术</title><meta name="author" content="Muke"><meta name="copyright" content="Muke"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="一个分享技术、生活和思考的个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jian-Blog">
+<meta property="og:url" content="https://jian134.github.io/jianBlog/page/4/index.html">
+<meta property="og:site_name" content="Jian-Blog">
+<meta property="og:description" content="一个分享技术、生活和思考的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jian134.github.io/jianBlog/images/avatar.jpg">
+<meta property="article:author" content="Muke">
+<meta property="article:tag" content="博客,技术,生活,编程">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jian134.github.io/images/avatar.jpg">
+<meta name="twitter:site" content="@JianBlog"><script type="application/ld+json"></script><link rel="shortcut icon" href="/jianBlog/img/favicon.ico"><link rel="canonical" href="https://jian134.github.io/jianBlog/page/4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="your-google-verification-code"/><meta name="baidu-site-verification" content="your-baidu-verification-code"/><meta name="msvalidate.01" content="your-bing-verification-code"/><link rel="stylesheet" href="/jianBlog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/jianBlog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Jian-Blog',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="author" content="Muke - Jian-Blog"><meta name="description" content="记录生活与技术 - 一个分享技术、生活和思考的个人博客"><meta name="keywords" content="博客,技术,生活,编程,Jian-Blog,Muke"><meta property="og:site_name" content="Jian-Blog"><meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta name="theme-color" content="#E67E22"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/img/butterfly-icon.png"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/jianBlog/url(https:/source.unsplash.com/random/1920x1080/?nature,water));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">43</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url(/jianBlog/img/banner001.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/jianBlog/"><img class="site-icon" src="/jianBlog/img/butterfly-icon.png" alt="Logo"><span class="site-name">Jian-Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Jian-Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/10/11/10/%E2%80%9D%E6%A0%91%E8%8E%93%E6%B4%BE%E2%80%9C%E5%8E%86%E7%A8%8B/" title="”树莓派“历程">”树莓派“历程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-11T09:10:00.000Z" title="发表于 2025-10-11 17:10:00">2025-10-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E5%8D%95%E7%89%87%E6%9C%BA/">单片机</a></span></div><div class="content">前言&emsp;&emsp;经常刷到关于“树莓派”的应用，看到TB上的单主板价格在300左右，显示屏控件在100左右，看了有种穷人玩不懂，富人看不上的意思。不过这世界需要不停地探索，看到有人拿这个当服务器，不停地烧板，也是挺佩服的。国产的香橙派貌似性能更高，不知道价格几何，后面慢慢研究。 &emsp;&emsp;让我想起大一上电脑知识课的时候，大家一个个拿着书本上课，老师照本宣科在黑板写，当时不是没有单片机，不是没有树莓派，连电脑都不稀奇，教学方案落后的很，上前端课都是大头电脑，真是服了。 记录一下它的历程🍓 一颗“小莓果”引发的数字革命：树莓派，如何改变了世界？你可能听说过它，一块信用卡大小的电路板；你可能用过它，把它变成了家用媒体中心、智能监控站，甚至是一个AI大脑。它就是——树莓派 (Raspberry Pi)。 这颗源自英国的“小莓果”，不仅是电子爱好者的掌上明珠，更是一场深刻的教育和科技革命的象征。 🎓 始于教育的伟大梦想 (2012年)树莓派的诞生，源于一个简单而宏大的愿景：让下一代学会编程。 2012年，当第一代 Raspberry Pi Model B 问世时...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/10/11/10/%E7%A2%8E%E7%89%87%E5%8C%96%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/" title="碎片化时间管理">碎片化时间管理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-11T07:06:00.000Z" title="发表于 2025-10-11 15:06:00">2025-10-11</time></span></div><div class="content">前言&emsp;&emsp;碎片化时间管理，是时间管理的一种方式，它将时间碎片化，然后将碎片化的时间进行合理的安排，从而达到时间管理的目的。最近越发越觉得工作没有效率，学习没有劲头。辞职明显不明智，一直拖着也毫无意义。 碎片化时间管理&emsp;&emsp;拿AI写篇软文，记录一下今天，顺便自己也多看多学。 化零为整，高效学习：碎片化时间管理，让你事半功倍！在这个信息爆炸、节奏飞快的时代，你是否总觉得时间不够用？想学习提升，却被各种琐事打断，大块的时间难觅踪影？别担心！高效的秘诀，不在于挤出“整段”时间，而在于如何巧妙地利用那些看似微不足道的“碎片时间”！ 你的时间，比你想象的更丰富！ 上下班通勤的地铁上，午休等待用餐的间隙，睡前的那十分钟，甚至排队、等人的短暂空闲……这些被我们随意放任的“碎片”，累加起来，每天可能长达一小时甚至更多！如何变废为宝，让这些零散的时间成为你高效学习的“加速器”？ 碎片化时间管理高效学习的五大“魔法”： 1. 明确目标，让碎片时间有的放矢 碎片化学习最忌讳没有目的性。在开始前，问问自己：我想利用这五分钟记住三个英语单词？还是想利用这十分钟复习昨天学过...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/10/10/10/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/" title="工作有感">工作有感</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-10T10:30:00.000Z" title="发表于 2025-10-10 18:30:00">2025-10-10</time></span></div><div class="content">前言&emsp;&emsp;8号假期结束，9号开始开绩效总结会，要求3天内自我评估提交，写自己贡献。 记录想说的话&emsp;&emsp;我一直觉得自己进一家公司，最重要是做到自己喜欢做的事情，长期坚持下去。但是发现深圳这些个公司天天不是搞小团体，就是各种大厂遗留下来的OKR,KPI..，让人心情烦躁，虽然这工作一直没啥事做，只能做一些边角料的事，但是工资就这么多，日常摸鱼看看文档，处理下文档，这些都没办法写进绩效里面。一开会大几十号人，每次需求会跟天书一样，我都好奇开发看这些个需求文档，看的明白么。看的明白怎么一点技术沉淀的文档都没有，天天就这个系统卡了，那个系统崩了，都在干嘛呢？ &emsp;&emsp; 每天都在劝退自己，每天还要坚持上班是真鸡儿痛苦，人生像是静止了一样，不进不退，从别人得到的反馈都是0.摸摸鱼的功夫写个blog消磨下时间，说实话难顶。 </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/10/09/10/Ai%E6%9C%89%E6%84%9F/" title="Ai有感">Ai有感</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-09T08:50:00.000Z" title="发表于 2025-10-09 16:50:00">2025-10-09</time></span></div><div class="content">记录想说的话&emsp;&emsp;身处深圳这座科技之城，从事程序员相关的工作，每天打开微信推到首页的都是高StarGithub项目，每天脑子信息爆炸，但是无法从中汲取一点灵感。从一开始的新奇，到后来的摸索，再到厌倦，仿佛经过了很长的时间，但是也不过2个月有余。 &emsp;&emsp;从去年公司开启的AI编程助手：copilot我一直想寻思AI作为工具的上限在哪里，难道仅仅是辅助代码的编写吗？直到大模型井喷，每家公司基本每个月都在出新的模型，对文字，图像，语音的“改革”，改革其实也谈不上，在我看来每个都各有缺点，花钱用传说中的 claude code又没这个创新的产品思路和余钱，逐渐感觉AI这东西，一方面在降低了学习成本，一方面在提高所有人的付费意识，不知道后面会发展成什么样。反正baidu这种搜索引擎听说搜索量骤减了，我倒是觉得是天大的好事，希望少点被莆田医院坑的人，名声真是太臭了。 &emsp;&emsp;我一开始想给自己家宝贝用curose做个类似博客的推广页，发现买了域名，服务器备案竟然要本人实名，实在是恶心麻烦了。后来又接触字节的Trae CN,这个玩意说的牛逼轰轰，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/10/09/10/%E3%80%8A%E8%8E%AB%E6%AC%BA%E5%B0%91%E5%B9%B4%E7%A9%B7%E3%80%8B/" title="莫欺少年穷">莫欺少年穷</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-10-09T02:19:00.000Z" title="发表于 2025-10-09 10:19:00">2025-10-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E6%AD%8C%E6%9B%B2/">歌曲</a></span></div><div class="content">前言&emsp;&emsp;国庆期间高铁路上和老婆一起看雄狮少年，被国产动画震惊的同时，这首歌一响起，头皮就开始炸起来了。上次听到这首歌还是《乐队的夏天》直播live，九连真人的歌曲风格全是客家话，乐队成员也都是地道的客家人。2021年12月30日，该歌曲提名第13届华语金曲奖年度最佳客语歌曲奖。 &emsp;&emsp;虽然这个动画刚出来就有听说，但是拖到今天才看，因为我不太喜欢有争议的电影，因为不知道是官方炒作还是男女对立等因素都让人反感。看完确实觉得中国之大，不应该只有追光动画一家，还有很多动画在努力传播中华文化，相比之下，第二部就明显拉了很多。  九连真人 - 《莫欺少年穷live》 歌词  [00:00.00] 莫欺少年穷 (Live) - 九连真人  [00:00.13] 词：阿龙  [00:00.18] 曲：阿龙  [00:00.22] 编曲：九连真人  [00:00.31] 贝斯编曲：张天罡  [00:00.40] 主唱：阿龙  [00:00.46] 吉他：阿龙  [00:00.52] 副主唱：阿麦  [00:00.60] 小号：阿麦  [00:00.66] 乐队...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/09/28/10/%E9%A2%9C%E8%89%B2%E6%90%AD%E9%85%8D%E5%8E%9F%E7%90%86/" title="颜色搭配原理，推荐一些好看的配色">颜色搭配原理，推荐一些好看的配色</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-28T03:50:00.000Z" title="发表于 2025-09-28 11:50:00">2025-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E8%AE%BE%E8%AE%A1/">设计</a></span></div><div class="content">前言我从事后端工作，但是内心饱含对现代美学的尊敬，对艺术类色彩类和人文都有浓厚的兴趣。以下是我看到的关于配色的文章，我认为配色是设计中非常重要的一个环节，忍不住爬下来，方便自己记录也给大家学习。 配色是什么？我们都知道，现在是”颜值即正义”的时代，所以色彩搭配在网页或应用设计中是非常重要的。配色是一种非常直观的视觉语言，它不仅决定了界面的整体氛围，还会影响用户的情绪、注意力和阅读体验。一个舒适的配色方案，可以让人感到放松、有秩序和美感；而糟糕的配色则容易造成视觉疲劳，甚至让人误解内容。 颜色搭配原理色彩搭配并非随意选择，它背后有一些基础的视觉原理和心理规律：  色轮理论：互补色（对比强烈），邻近色（和谐柔和），三角配色（三色平衡）。 冷暖对比：冷色如蓝绿，令人安静；暖色如红黄，令人振奋。 明度与对比度：亮色 + 深色有助于文字可读性。 心理联想：不同颜色引发不同情感，比如紫色代表浪漫、黄色代表活力等。  为什么这些配色让人舒服？我们之所以会觉得某些颜色组合”舒服”，往往是因为它们在以下几个维度上取得了良好的平衡： ✅ 1. 明暗对比适中 比如「玫红 + 黑色」、「柠檬黄 + 浅灰...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/09/28/10/%E8%BD%AC%E5%95%8A%E8%BD%AC%E5%95%8A%E8%BD%AC%E9%AB%98%E9%93%81/" title="转啊转啊转高铁">转啊转啊转高铁</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-28T03:40:00.000Z" title="发表于 2025-09-28 11:40:00">2025-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">正文今年的十一真是热门啊，很多人候补等30号,再不济候补等29号的高铁,跨越几百公里发现回家异常艰难,在这里我都能预料今年过年有多艰难了。我自己也是掐着点在蹲12306的票，同时智行也同步抢着票。从深圳出发到四川的班次确实是少，但是换个思路广州南出发的班次就多了不少，本来的思路是从深圳-&gt;贵州-&gt;宜宾。想法还是太天真了。毕竟深圳都是年轻人的城市，贵州即使是大站，来这儿中转的人倒是一点都不少。贵州本身还是人口大省，思路一度瘫痪了。 换了个想法，如果从广州南出发，可以先到桂林，隔天然后再直达宜宾，这样路上的时间基本不变，还多出一天游玩桂林的时间。当然你可以搁置更久，因为12306和各个平台的换乘方案是为了一趟快速到达目的地，并不考虑旅途中的人中途下来玩一趟。直达的车次先不说有没有，从广州-&gt;宜宾这个车次要7个小时，还是高铁一般人也是屁股扛不住的。这个方案除了多出一晚上的酒店费用，对于不赶时间的我来说，还是很划算的，毕竟高铁是按照路途算金额的。基本是一样的线路，路线选择更加灵活多样，多添加了一份旅途上的快乐。 后记我已经准备28号开始请2天半的假分成三段线路回宜宾了，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/09/26/10/%E7%A7%9F%E6%88%BF%E6%8C%87%E5%8D%97/" title="租房指南">租房指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-26T06:00:29.000Z" title="发表于 2025-09-26 14:00:29">2025-09-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E5%AE%9D%E5%AE%89/">宝安</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E5%AE%9D%E5%AE%89/2025/">2025</a></span></div><div class="content">背景20年投身深圳,从一开始投靠朋友，到自己租房，到现在自己独立生活，再到和老婆到处”扫房”经历了好几次搬家，租房的经历也让我对租房有了新的认识，房子作为一种”回家必备”的东西,至关重要,毕竟没房子,你tm睡哪 正文一开始租房的时候，我对租房的认识还停留在”租房就是租个单间，混着呗，还能住桥洞不成”，邋里邋遢，衣架都不超过5个，毕竟深圳这天气一年四季必备的有T恤和短裤。 我20年来到深圳，是因为一个好朋友也是同事叫老雷，前后桌18年中秋前后，因为公司架构调整毅然投身深圳这个大机器城市，我们因为游戏一直保持联系，我20年刚到深圳，想着一起挤挤吧，没想到他租的单间是高低床，他还有朋友一起住这个单间，我自己身上也就3000块钱，也没想太多，就挤挤呗，我睡行军床上，开始三个人没羞没臊的同居生活，长达半个月。 后来他朋友找我谈话表达出同居不方便，虽然言语隐晦，但是一些事也没法避免，我也识趣在附近也就一栋楼，找到房屋管理员，短租了更小的单间，那时候1100，押一付一，倒也还能生活，就是没床垫，没铺盖，有点难受，但是有空调已经很好了，我就一直住了大半个月一直物色工作，像个小媳妇一样等老雷下班一...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/09/26/10/%E5%9C%B0%E9%93%81%E8%A7%81%E9%97%BB/" title="深圳五号线地铁见闻">深圳五号线地铁见闻</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-26T01:40:00.000Z" title="发表于 2025-09-26 09:40:00">2025-09-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content"> 很难想象，在深圳除了11号线还有5号线这样分流差劲的地铁  一个随处可见37左右的中年男性，带着眼镜看不出喜乐，我已经等了4班地铁，这次没有犹豫看见空隙就挤了上去，这个吊人开始发出啧啧的恶心声音，仿佛地铁是他家开的一样，手肘开始扬起顶住我的肩膀，我觉得很冒犯开始可以保持距离，但是周边没有可以扶着的栏杆，我只能两脚打开保持平衡，这个时候已经非常不爽这个吊毛了。    好不容易过了2站路，这个吊毛很不客气的开始大声喊：”让一下！”虽然没有骂人，但是从声音可以听出来这个人已经很不爽了。我TM呆了，日你妈的狗东西你TM肘击我一路，现在嫌弃我挡你路，关键地铁只是预告一下，C你妈的还没开门呢？    你挤你妈个吊啊，我C。心里虽然那么想，但是我不停克制自己，毕竟这样的人大清早一脸司马样，很可能家里有变故，多一事不如少一事。我心胸开阔，顶多网上发发牢骚，不会把坏心情带到自己的生活和工作里面。   中国深圳这个地方，即使是再高科技的城市，也难免遭遇低素质的人，保持一个好的心态很重要。我一直知道这个世界上好人和贱人是一样多的，保持热忱和善良，不要因为老鼠屎坏了自己的心情，毕竟这种老鼠屎并不常见。...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/jianBlog/2025/09/25/10/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" title="按脚这个事妙不可言">按脚这个事妙不可言</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-09-25T11:09:29.000Z" title="发表于 2025-09-25 19:09:29">2025-09-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E6%8C%89%E6%91%A9/">按摩</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E6%8C%89%E6%91%A9/%E5%AE%9D%E5%AE%89/">宝安</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/jianBlog/categories/%E6%8C%89%E6%91%A9/%E5%AE%9D%E5%AE%89/2025/">2025</a></span></div><div class="content">背景：2023年，朋友介绍拔火罐，我试了一下，感觉不错，就一直坚持了下来，现在已经坚持了2年了，每天都去，感觉效果不错，身体也越来越好，希望大家也坚持下去，身体健康！ 正文  一开始不知道自己身体哪里不舒服，原来是海滨城市湿度大，后来自己尝试拔罐按摩，感觉效果也不错，就一直坚持了下来，现在已经坚持了2年了。   陆陆续续和老婆大人走过一些城市，热衷于在每个城市按摩放松一下旅途中的疲惫，按摩这个事并不是会所，而是街角巷尾的盲人按摩和明亮的足底保健。其中最妙的一次当属2022年刚认识我家宝贝老婆的时候，见完家长，一路四川溜达眉山，经过乐山，胡乱溜达到一家盲人按摩。   那里的师傅个个心明眼亮，手法娴熟，按摩的力度和频率都恰到好处，按摩完后，感觉全身放松，精神倍增，感觉自己又年轻了几岁，几人闲聊中知道师傅的手法力道竟然是从会所出来的，颇有种从良的意思在里面，师傅按完腰背，开始抬起大腿，开始规则的椭圆滑动，多少年不出动静的胯骨，忽然发出一声声”咔”的响声，有种久久不能反应过来的感觉，太恍惚了。后来多少次自己在家里尝试，都再也没有那种感觉。要不怎么说人和人之间手法千差万别呢！这种事你不躺下...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/jianBlog/page/3/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/jianBlog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/jianBlog/page/3/#content-inner">3</a><span class="page-number current">4</span><a class="page-number" href="/jianBlog/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/jianBlog/page/5/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Muke</div><div class="author-info-description">热爱生活，探索技术，半AI古法工程师,顺便记录美好时光</div><div class="site-data"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">43</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jianke3821"><i class="fab fa-github"></i><span>关注我</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！这里记录着我的技术笔记、生活感悟和有趣的发现。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/05/29/10/%E7%94%9F%E6%B4%BB%E6%84%9F%E7%9F%A5/" title="生活感知">生活感知</a><time datetime="2026-05-29T06:57:02.924Z" title="发表于 2026-05-29 14:57:02">2026-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/05/29/2026/05/UI%E4%B9%A6%E7%AD%BE/" title="我要当前端大佬,ui之神">我要当前端大佬,ui之神</a><time datetime="2026-05-28T16:00:00.000Z" title="发表于 2026-05-29 00:00:00">2026-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/05/29/2026/05/%E5%A5%BD%E4%B9%85%E6%B2%A1%E5%86%99,%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1claude%E4%BF%AE%E5%A4%8D-%E6%95%B4%E7%90%86/" title="claude忽然失效">claude忽然失效</a><time datetime="2026-05-28T16:00:00.000Z" title="发表于 2026-05-29 00:00:00">2026-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/03/06/2026/03/openclaw%E5%AE%89%E8%A3%85%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%95/" title="openclaw安装事故记录">openclaw安装事故记录</a><time datetime="2026-03-05T16:00:00.000Z" title="发表于 2026-03-06 00:00:00">2026-03-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/03/02/2026/02/%E5%BC%80%E5%A7%8B%E9%87%8D%E6%96%B0%E6%89%BE%E5%B7%A5%E4%BD%9C%E4%BA%86/" title="2026继续奋斗">2026继续奋斗</a><time datetime="2026-03-02T03:00:00.000Z" title="发表于 2026-03-02 11:00:00">2026-03-02</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/jianBlog/categories/" title="查看更多">
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/AI/"><span class="card-category-list-name">AI</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/%E5%8D%95%E7%89%87%E6%9C%BA/"><span class="card-category-list-name">单片机</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/%E5%8D%95%E7%89%87%E6%9C%BA/%E6%A0%91%E8%8E%93%E6%B4%BE/"><span class="card-category-list-name">树莓派</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/%E5%8D%95%E7%89%87%E6%9C%BA/%E6%A0%91%E8%8E%93%E6%B4%BE/%E5%AE%B6%E5%BA%AD%E5%BD%B1%E9%99%A2/"><span class="card-category-list-name">家庭影院</span><span class="card-category-list-count">1</span></a></li></ul></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/%E5%8E%86%E5%8F%B2/"><span class="card-category-list-name">历史</span><span class="card-category-list-count">5</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/%E5%8E%86%E5%8F%B2/%E5%94%90%E6%9C%9D/"><span class="card-category-list-name">唐朝</span><span class="card-category-list-count">4</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/%E5%8E%86%E5%8F%B2/%E5%94%90%E6%9C%9D/%E6%88%98%E4%BA%89/"><span class="card-category-list-name">战争</span><span class="card-category-list-count">1</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/jianBlog/categories/%E5%8E%86%E5%8F%B2/%E5%94%90%E6%9C%9D/%E6%88%98%E4%BA%89/%E8%91%97%E5%90%8D%E4%BA%8B%E4%BB%B6/"><span class="card-category-list-name">著名事件</span><span class="card-category-list-count">1</span></a></li></ul></li></ul></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/jianBlog/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 1.23em; color: #999ea6">读书</a> <a href="/jianBlog/tags/%E6%84%9F%E6%82%9F/" style="font-size: 1.1em; color: #999">感悟</a> <a href="/jianBlog/tags/%E6%AD%8C%E8%AF%8D/" style="font-size: 1.1em; color: #999">歌词</a> <a href="/jianBlog/tags/%E5%AE%B6%E5%BA%AD%E5%BD%B1%E9%99%A2/" style="font-size: 1.1em; color: #999">家庭影院</a> <a href="/jianBlog/tags/%E5%AE%89%E8%A3%85/" style="font-size: 1.1em; color: #999">安装</a> <a href="/jianBlog/tags/%E7%99%BD%E9%93%B6/" style="font-size: 1.37em; color: #99a4b2">白银</a> <a href="/jianBlog/tags/%E5%89%83%E9%A1%BB%E5%88%80/" style="font-size: 1.1em; color: #999">剃须刀</a> <a href="/jianBlog/tags/%E5%BD%B1%E9%9F%B3/" style="font-size: 1.1em; color: #999">影音</a> <a href="/jianBlog/tags/%E5%AE%9D%E5%AE%89/" style="font-size: 1.1em; color: #999">宝安</a> <a href="/jianBlog/tags/%E6%97%A5%E6%9C%AC/" style="font-size: 1.1em; color: #999">日本</a> <a href="/jianBlog/tags/%E7%94%9F%E5%B9%B3/" style="font-size: 1.1em; color: #999">生平</a> <a href="/jianBlog/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.1em; color: #999">前端</a> <a href="/jianBlog/tags/%E8%87%AA%E6%89%98%E7%AE%A1/" style="font-size: 1.1em; color: #999">自托管</a> <a href="/jianBlog/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 1.23em; color: #999ea6">随笔</a> <a href="/jianBlog/tags/openclaw-%E5%AE%89%E8%A3%85-%E4%BA%8B%E6%95%85/" style="font-size: 1.1em; color: #999">openclaw, 安装, 事故</a> <a href="/jianBlog/tags/%E7%A7%9F%E6%88%BF/" style="font-size: 1.1em; color: #999">租房</a> <a href="/jianBlog/tags/%E5%B7%A5%E4%BD%9C/" style="font-size: 1.37em; color: #99a4b2">工作</a> <a href="/jianBlog/tags/%E5%90%89%E5%88%97/" style="font-size: 1.1em; color: #999">吉列</a> <a href="/jianBlog/tags/%E6%95%B0%E7%A0%81/" style="font-size: 1.1em; color: #999">数码</a> <a href="/jianBlog/tags/%E8%B5%84%E6%BA%90/" style="font-size: 1.1em; color: #999">资源</a> <a href="/jianBlog/tags/%E5%94%90%E6%9C%9D/" style="font-size: 1.1em; color: #999">唐朝</a> <a href="/jianBlog/tags/cc-switch/" style="font-size: 1.1em; color: #999">cc-switch</a> <a href="/jianBlog/tags/LobeHub/" style="font-size: 1.1em; color: #999">LobeHub</a> <a href="/jianBlog/tags/%E5%94%90%E7%8E%84%E5%AE%97/" style="font-size: 1.1em; color: #999">唐玄宗</a> <a href="/jianBlog/tags/%E4%BA%A7%E5%93%81%E8%AF%84%E6%B5%8B/" style="font-size: 1.1em; color: #999">产品评测</a> <a href="/jianBlog/tags/%E8%AE%A1%E5%88%92/" style="font-size: 1.1em; color: #999">计划</a> <a href="/jianBlog/tags/2026/" style="font-size: 1.23em; color: #999ea6">2026</a> <a href="/jianBlog/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 1.23em; color: #999ea6">树莓派</a> <a href="/jianBlog/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 1.5em; color: #99a9bf">生活</a> <a href="/jianBlog/tags/claude/" style="font-size: 1.1em; color: #999">claude</a> <a href="/jianBlog/tags/AI/" style="font-size: 1.23em; color: #999ea6">AI</a> <a href="/jianBlog/tags/AI-UI-claude/" style="font-size: 1.1em; color: #999">AI,UI,claude</a> <a href="/jianBlog/tags/%E7%94%B5%E8%A7%86%E5%89%A7/" style="font-size: 1.23em; color: #999ea6">电视剧</a> <a href="/jianBlog/tags/Docker/" style="font-size: 1.1em; color: #999">Docker</a> <a href="/jianBlog/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 1.1em; color: #999">心理学</a> <a href="/jianBlog/tags/%E9%85%8D%E8%89%B2/" style="font-size: 1.1em; color: #999">配色</a> <a href="/jianBlog/tags/EOF/" style="font-size: 1.37em; color: #99a4b2">EOF</a> <a href="/jianBlog/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 1.1em; color: #999">电影</a> <a href="/jianBlog/tags/%E5%AE%B0%E7%9B%B8/" style="font-size: 1.1em; color: #999">宰相</a> <a href="/jianBlog/tags/%E9%80%89%E8%82%A1%E6%8A%80%E5%B7%A7/" style="font-size: 1.1em; color: #999">选股技巧</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
+      
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/jianBlog/archives/2026/05/">
+            <span class="card-archive-list-date">
+              五月 2026
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/jianBlog/archives/2026/03/">
+            <span class="card-archive-list-date">
+              三月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/jianBlog/archives/2026/01/">
+            <span class="card-archive-list-date">
+              一月 2026
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/jianBlog/archives/2025/12/">
+            <span class="card-archive-list-date">
+              十二月 2025
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/jianBlog/archives/2025/11/">
+            <span class="card-archive-list-date">
+              十一月 2025
+            </span>
+            <span class="card-archive-list-count">12</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/jianBlog/archives/2025/10/">
+            <span class="card-archive-list-date">
+              十月 2025
+            </span>
+            <span class="card-archive-list-count">12</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/jianBlog/archives/2025/09/">
+            <span class="card-archive-list-date">
+              九月 2025
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">42</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-05-29T08:37:01.980Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/jianBlog/img/foot.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Muke</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div><div class="footer_custom_text">感谢您的访问，希望您喜欢这个博客！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/jianBlog/js/utils.js"></script><script src="/jianBlog/js/main.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["记录生活，分享技术","简单生活，简单记录"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  btf.getScript('https://sdk.jinrishici.com/v2/browser/jinrishici.js')
+    .then(() => {
+      jinrishici.load(result => {
+        if (result && result.data && result.data.content) {
+          typedJSFn.processSubtitle(result.data.content)
+        } else {
+          throw new Error('Failed to parse the return value of Jinrishici API')
+        }
+      })
+    })
+    .catch(err => {
+      console.error('Failed to get the Jinrishici API:', err)
+      typedJSFn.processSubtitle(2)
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
