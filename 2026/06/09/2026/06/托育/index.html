@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Jian-Blog | Jian-Blog</title><meta name="author" content="Muke"><meta name="copyright" content="Muke"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="一个分享技术、生活和思考的个人博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jian-Blog">
+<meta property="og:url" content="https://jian134.github.io/jianBlog/2026/06/09/2026/06/%E6%89%98%E8%82%B2/index.html">
+<meta property="og:site_name" content="Jian-Blog">
+<meta property="og:description" content="一个分享技术、生活和思考的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jian134.github.io/jianBlog/images/avatar.jpg">
+<meta property="article:published_time" content="2026-06-09T08:27:47.553Z">
+<meta property="article:modified_time" content="2026-06-09T08:27:47.553Z">
+<meta property="article:author" content="Muke">
+<meta property="article:tag" content="博客,技术,生活,编程">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jian134.github.io/images/avatar.jpg">
+<meta name="twitter:site" content="@JianBlog"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "https://jian134.github.io/jianBlog/2026/06/09/2026/06/%E6%89%98%E8%82%B2/",
+  "image": "https://jian134.github.io/jianBlog/images/avatar.jpg",
+  "datePublished": "2026-06-09T08:27:47.553Z",
+  "dateModified": "2026-06-09T08:27:47.553Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Muke",
+      "url": "https://jian134.github.io/jianBlog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/jianBlog/img/favicon.ico"><link rel="canonical" href="https://jian134.github.io/jianBlog/2026/06/09/2026/06/%E6%89%98%E8%82%B2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="your-google-verification-code"/><meta name="baidu-site-verification" content="your-baidu-verification-code"/><meta name="msvalidate.01" content="your-bing-verification-code"/><link rel="stylesheet" href="/jianBlog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/jianBlog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Jian-Blog',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="author" content="Muke - Jian-Blog"><meta name="description" content="记录生活与技术 - 一个分享技术、生活和思考的个人博客"><meta name="keywords" content="博客,技术,生活,编程,Jian-Blog,Muke"><meta property="og:site_name" content="Jian-Blog"><meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta name="theme-color" content="#E67E22"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/img/butterfly-icon.png"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/jianBlog/url(https:/source.unsplash.com/random/1920x1080/?nature,water));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">64</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">44</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/jianBlog/img/kong.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/jianBlog/"><img class="site-icon" src="/jianBlog/img/butterfly-icon.png" alt="Logo"><span class="site-name">Jian-Blog</span></a><a class="nav-page-title" href="/jianBlog/"><span class="site-name">Jian-Blog</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">无标题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-06-09T08:27:47.553Z" title="发表于 2026-06-09 16:27:47">2026-06-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-06-09T08:27:47.553Z" title="更新于 2026-06-09 16:27:47">2026-06-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://jian134.github.io/jianBlog">Muke</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jian134.github.io/jianBlog/2026/06/09/2026/06/%E6%89%98%E8%82%B2/">https://jian134.github.io/jianBlog/2026/06/09/2026/06/%E6%89%98%E8%82%B2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://jian134.github.io/jianBlog" target="_blank">Jian-Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/jianBlog/images/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/jianBlog/2026/05/30/2026/05/%E5%91%A8%E6%9C%AB%E6%B8%B8%E7%8F%A0%E6%B5%B7/" title="第二次来珠海"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">第二次来珠海</div></div><div class="info-2"><div class="info-item-1">杜甫舞剧也算是丰富一下周末文化生活，开幕的人物层叠效果真的很震撼。舞剧演员全程基本无声演出非常耗费体力精神，青年中年晚年由2位演员共同演绎，听说是10年舞剧剧本。 四个篇章：一个人笔下的唐朝兴衰整部舞剧大约 90-110 分钟，按时间顺序用意象化的舞蹈浓缩了杜甫的一生： 序：壮游羁旅 —— 踌躇满志，怀着“致君尧舜上”的理想奔赴长安。 上篇：长安十载 —— 屡试不中，困顿长安，看透了朝廷的腐败（包含《丽人行》和讥讽权贵的《兵车行》）。 下篇：弃官归隐 —— 安史之乱爆发，马嵬坡下红颜化作尘埃。杜甫在丧子之痛与国破山河碎中，毅然弃官，笔底波澜。 尾声：登高望远 —— 老年杜甫在夔州（今奉节）登高，在“无边落木萧萧下，不尽长江滚滚来”的无限苍凉中，完成了他人格的终极升华。 舞剧《杜甫》不是枯燥的历史流水账，它是一本“立体的诗集”。 个人观感更多表达的大时代背景下，作为主人公的内心世界挣扎，历史从来不是一笔，而是无数人的经历。考取功名像是那个时代的996枷锁，看清权利的嘴脸，和时态的炎凉才能写出”安得广厦千万间，大庇天下寒士俱欢颜！”的流传万古的诗句。舞台现场表现，人物心情早年丧子，中...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Muke</div><div class="author-info-description">热爱生活，探索技术，半AI古法工程师,顺便记录美好时光</div><div class="site-data"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">64</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">44</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jianke3821"><i class="fab fa-github"></i><span>关注我</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！这里记录着我的技术笔记、生活感悟和有趣的发现。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/06/09/2026/06/%E6%89%98%E8%82%B2/" title="无标题">无标题</a><time datetime="2026-06-09T08:27:47.553Z" title="发表于 2026-06-09 16:27:47">2026-06-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/05/30/2026/05/%E5%91%A8%E6%9C%AB%E6%B8%B8%E7%8F%A0%E6%B5%B7/" title="第二次来珠海">第二次来珠海</a><time datetime="2026-05-29T16:00:00.000Z" title="发表于 2026-05-30 00:00:00">2026-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/05/29/2026/05/UI%E4%B9%A6%E7%AD%BE/" title="我要当前端大佬,ui之神">我要当前端大佬,ui之神</a><time datetime="2026-05-28T16:00:00.000Z" title="发表于 2026-05-29 00:00:00">2026-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/05/29/2026/05/%E5%A5%BD%E4%B9%85%E6%B2%A1%E5%86%99,%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1claude%E4%BF%AE%E5%A4%8D-%E6%95%B4%E7%90%86/" title="claude忽然失效">claude忽然失效</a><time datetime="2026-05-28T16:00:00.000Z" title="发表于 2026-05-29 00:00:00">2026-05-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/03/06/2026/03/openclaw%E5%AE%89%E8%A3%85%E4%BA%8B%E6%95%85%E8%AE%B0%E5%BD%95/" title="openclaw安装事故记录">openclaw安装事故记录</a><time datetime="2026-03-05T16:00:00.000Z" title="发表于 2026-03-06 00:00:00">2026-03-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/jianBlog/img/foot.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Muke</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div><div class="footer_custom_text">感谢您的访问，希望您喜欢这个博客！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/jianBlog/js/utils.js"></script><script src="/jianBlog/js/main.js"></script><div class="js-pjax"></div><script src="/js/random-banner.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
