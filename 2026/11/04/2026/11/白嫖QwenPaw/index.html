@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>QwenPaw 踩坑记录 | Jian-Blog</title><meta name="author" content="Muke"><meta name="copyright" content="Muke"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="想找个资源也太难了AgentScope Platform &#x2F; QwenPaw 免费容器踩坑记录 环境：Windows 10 (Muke@win10) ↔ AgentScope 免费容器 qwenpaw-sbs-prod-4lx77整理自与 WorkBuddy 的排障对话，按时间线梳理   0. 环境速查表   项目 值    容器 qwenpaw-sbs-prod-4lx77（K8s p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QwenPaw 踩坑记录">
+<meta property="og:url" content="https://jian134.github.io/jianBlog/2026/11/04/2026/11/%E7%99%BD%E5%AB%96QwenPaw/index.html">
+<meta property="og:site_name" content="Jian-Blog">
+<meta property="og:description" content="想找个资源也太难了AgentScope Platform &#x2F; QwenPaw 免费容器踩坑记录 环境：Windows 10 (Muke@win10) ↔ AgentScope 免费容器 qwenpaw-sbs-prod-4lx77整理自与 WorkBuddy 的排障对话，按时间线梳理   0. 环境速查表   项目 值    容器 qwenpaw-sbs-prod-4lx77（K8s p">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jian134.github.io/jianBlog/images/avatar.jpg">
+<meta property="article:published_time" content="2026-11-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-11-05T10:15:45.888Z">
+<meta property="article:author" content="Muke">
+<meta property="article:tag" content="资源">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jian134.github.io/images/avatar.jpg">
+<meta name="twitter:site" content="@JianBlog"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "QwenPaw 踩坑记录",
+  "url": "https://jian134.github.io/jianBlog/2026/11/04/2026/11/%E7%99%BD%E5%AB%96QwenPaw/",
+  "image": "https://jian134.github.io/jianBlog/images/avatar.jpg",
+  "datePublished": "2026-11-03T16:00:00.000Z",
+  "dateModified": "2026-11-05T10:15:45.888Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Muke",
+      "url": "https://jian134.github.io/jianBlog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/jianBlog/img/favicon.ico"><link rel="canonical" href="https://jian134.github.io/jianBlog/2026/11/04/2026/11/%E7%99%BD%E5%AB%96QwenPaw/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="your-google-verification-code"/><meta name="baidu-site-verification" content="your-baidu-verification-code"/><meta name="msvalidate.01" content="your-bing-verification-code"/><link rel="stylesheet" href="/jianBlog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/jianBlog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'QwenPaw 踩坑记录',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="author" content="Muke - Jian-Blog"><meta name="description" content="记录生活与技术 - 一个分享技术、生活和思考的个人博客"><meta name="keywords" content="博客,技术,生活,编程,Jian-Blog,Muke"><meta property="og:site_name" content="Jian-Blog"><meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta name="theme-color" content="#E67E22"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/img/butterfly-icon.png"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/jianBlog/url(https:/source.unsplash.com/random/1920x1080/?nature,water));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">65</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">46</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/jianBlog/img/kong.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/jianBlog/"><img class="site-icon" src="/jianBlog/img/butterfly-icon.png" alt="Logo"><span class="site-name">Jian-Blog</span></a><a class="nav-page-title" href="/jianBlog/"><span class="site-name">QwenPaw 踩坑记录</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">QwenPaw 踩坑记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-11-03T16:00:00.000Z" title="发表于 2026-11-04 00:00:00">2026-11-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-05T10:15:45.888Z" title="更新于 2026-11-05 18:15:45">2026-11-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="想找个资源也太难了"><a href="#想找个资源也太难了" class="headerlink" title="想找个资源也太难了"></a>想找个资源也太难了</h2><h1 id="AgentScope-Platform-QwenPaw-免费容器踩坑记录"><a href="#AgentScope-Platform-QwenPaw-免费容器踩坑记录" class="headerlink" title="AgentScope Platform &#x2F; QwenPaw 免费容器踩坑记录"></a>AgentScope Platform &#x2F; QwenPaw 免费容器踩坑记录</h1><blockquote>
+<p>环境：Windows 10 (Muke@win10) ↔ AgentScope 免费容器 qwenpaw-sbs-prod-4lx77<br>整理自与 WorkBuddy 的排障对话，按时间线梳理</p>
+</blockquote>
+<hr>
+<h2 id="0-环境速查表"><a href="#0-环境速查表" class="headerlink" title="0. 环境速查表"></a>0. 环境速查表</h2><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>容器</td>
+<td>qwenpaw-sbs-prod-4lx77（K8s pod，<strong>非特权容器</strong>）</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>Debian 12 (bookworm)，内核 5.10.134 lifsea8</td>
+</tr>
+<tr>
+<td>配置</td>
+<td>2 vCPU &#x2F; 3.7 GiB（无 Swap）&#x2F; 30 GB 系统盘</td>
+</tr>
+<tr>
+<td>Tailscale IP</td>
+<td><code>100.68.168.78</code>（容器）&#x2F; <code>100.67.53.77</code>（本地 win10）</td>
+</tr>
+<tr>
+<td>内网 IP</td>
+<td>172.16.32.189</td>
+</tr>
+<tr>
+<td>出口公网 IP</td>
+<td>47.84.122.196（NAT 共享，阿里云新加坡 ap-southeast-1）</td>
+</tr>
+<tr>
+<td>QwenPaw Web</td>
+<td>0.0.0.0:8088（uvicorn + XFCE 虚拟桌面 1280x800）</td>
+</tr>
+<tr>
+<td>sshd 配置文件</td>
+<td><code>/etc/ssh/sshd_config.d/99-root-key-only.conf</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="1️⃣-Day-1（11-03）：AgentScope-免费空间是什么"><a href="#1️⃣-Day-1（11-03）：AgentScope-免费空间是什么" class="headerlink" title="1️⃣ Day 1（11-03）：AgentScope 免费空间是什么"></a>1️⃣ Day 1（11-03）：AgentScope 免费空间是什么</h2><p><strong>问</strong>：AgentScope Platform 送的空间是什么？</p>
+<p><strong>结论</strong>：阿里通义实验室 Agent 生态的云端体验平台，公测期注册即送一个免费的云端 AI Agent 运行空间。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CPU &#x2F; 内存 &#x2F; 硬盘</td>
+<td>2 vCPU &#x2F; 4 GB &#x2F; 30 GB SSD（也有 60GB 的说法，以后台为准）</td>
+</tr>
+<tr>
+<td>系统</td>
+<td>Debian，支持 root</td>
+</tr>
+<tr>
+<td>网络</td>
+<td>NAT 共享出口，<strong>无独立公网 IP</strong></td>
+</tr>
+<tr>
+<td>领取条件</td>
+<td>邮箱注册 + <strong>必须绑定 GitHub</strong>，一键部署 QwenPaw</td>
+</tr>
+</tbody></table>
+<p><strong>坑&#x2F;限制</strong>：</p>
+<ul>
+<li>48 小时不活跃自动休眠；6 个月不活跃清数据</li>
+<li>容器免费 ≠ 模型免费，调模型走自己的 API Key</li>
+<li>公测政策随时可能变</li>
+</ul>
+<hr>
+<h2 id="2️⃣-Day-1：怎么查-IP-硬盘-跑命令"><a href="#2️⃣-Day-1：怎么查-IP-硬盘-跑命令" class="headerlink" title="2️⃣ Day 1：怎么查 IP &#x2F; 硬盘 &#x2F; 跑命令"></a>2️⃣ Day 1：怎么查 IP &#x2F; 硬盘 &#x2F; 跑命令</h2><p><strong>结论</strong>：三条路 —— ① QwenPaw 聊天框直接让它执行（每条命令要审批）；② Tailscale&#x2F;Cloudflare 隧道 SSH 进去拿完整终端（最顺手）；③ 让 AI 帮你装网页终端。</p>
+<p><strong>常用命令</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ip addr              <span class="comment"># 容器内网 IP（此镜像没装 iproute2，会报 command not found）</span></span><br><span class="line">curl ifconfig.me     <span class="comment"># 出口公网 IP（NAT 共享）</span></span><br><span class="line"><span class="built_in">df</span> -h                <span class="comment"># 硬盘容量，看 / 那一行</span></span><br><span class="line">free -h              <span class="comment"># 内存</span></span><br><span class="line"><span class="built_in">nproc</span>                <span class="comment"># CPU 核数</span></span><br></pre></td></tr></table></figure>
+
+<p>⚠️ 出口 IP 是 NAT 共享的，不能拿来做对外服务或白名单绑定。</p>
+<hr>
+<h2 id="3️⃣-Day-1：本地装-Tailscale"><a href="#3️⃣-Day-1：本地装-Tailscale" class="headerlink" title="3️⃣ Day 1：本地装 Tailscale"></a>3️⃣ Day 1：本地装 Tailscale</h2><p><strong>执行</strong>：<code>winget install Tailscale.Tailscale</code> → 装上 1.104.5，服务自动运行，托盘程序正常。</p>
+<p><strong>坑</strong>：<code>tailscale up</code> 首次需要浏览器授权，命令会打印一条 <code>https://login.tailscale.com/a/xxxx</code> 链接，点开登录即可（链接约 10 分钟过期，过期重跑 <code>tailscale up</code>）。</p>
+<p><strong>验证结果</strong>：</p>
+<ul>
+<li>✅ 容器节点早就加入过 tailnet：<code>qwenpaw-sbs-prod-4lx77 = 100.68.168.78</code></li>
+<li>✅ ping 通（64ms，走 DERP 新加坡中继）</li>
+<li>⚠️ <code>direct connection not established</code> —— 容器无公网 IP，UDP 打洞失败，永远走中继</li>
+<li>❌ 22 端口 Connection refused —— <strong>容器里根本没装 sshd</strong></li>
+</ul>
+<hr>
+<h2 id="4️⃣-Day-2（11-04）：-C-Muke-win10-是邮箱吗"><a href="#4️⃣-Day-2（11-04）：-C-Muke-win10-是邮箱吗" class="headerlink" title="4️⃣ Day 2（11-04）：-C &quot;Muke@win10&quot; 是邮箱吗"></a>4️⃣ Day 2（11-04）：<code>-C &quot;Muke@win10&quot;</code> 是邮箱吗</h2><p><strong>结论</strong>：不是。<code>ssh-keygen -C</code> 只是<strong>注释</strong>，纯标签，不参与认证、不校验格式、不发往任何服务。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-ed25519 AAAAC3NzaC1lZDI1... Muke@win10</span><br><span class="line">└─算法─┘ └──────密钥本体──────┘ └──注释──┘</span><br></pre></td></tr></table></figure>
+
+<p>建议填「设备-用途-日期」这类能区分来源的字符串。改注释只需编辑 <code>.pub</code> 文件行尾，不影响密钥本体。</p>
+<hr>
+<h2 id="5️⃣-Day-2：SSH-首次连通-硬件实测"><a href="#5️⃣-Day-2：SSH-首次连通-硬件实测" class="headerlink" title="5️⃣ Day 2：SSH 首次连通 + 硬件实测"></a>5️⃣ Day 2：SSH 首次连通 + 硬件实测</h2><p><strong>实测</strong>：<code>ssh root@100.68.168.78</code> 免密登录成功。</p>
+<table>
+<thead>
+<tr>
+<th>资源</th>
+<th>实测值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CPU</td>
+<td>2 核</td>
+<td>符合宣传</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>3.7 GiB，可用 2.3G</td>
+<td>⚠️ <strong>无 Swap</strong></td>
+</tr>
+<tr>
+<td>系统盘</td>
+<td>30 GB，已用 454M</td>
+<td>是 30G 版本，不是 60G</td>
+</tr>
+<tr>
+<td>隐藏发现</td>
+<td>跑着 <strong>XFCE 桌面</strong>（Xvfb + xfwm4 + xfce4-panel）</td>
+<td>所以内存一开机就用了 1.4G</td>
+</tr>
+</tbody></table>
+<p>⚠️ 镜像极精简：<code>ip</code>、<code>ss</code>、<code>netstat</code> 都没有，第一步先补：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get install -y iproute2 net-tools curl wget vim htop</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6️⃣-Day-2：想装-Docker-——-⛔-此路不通（最大坑）"><a href="#6️⃣-Day-2：想装-Docker-——-⛔-此路不通（最大坑）" class="headerlink" title="6️⃣ Day 2：想装 Docker —— ⛔ 此路不通（最大坑）"></a>6️⃣ Day 2：想装 Docker —— ⛔ 此路不通（最大坑）</h2><p><strong>做了完整的可行性探测</strong>，结论：<strong>这台容器装不了标准 Docker，也不适合 Podman</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>检测项</th>
+<th>结果</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CapEff</td>
+<td>缺 <code>CAP_SYS_ADMIN</code>、<code>CAP_NET_ADMIN</code></td>
+<td>dockerd 起不来</td>
+</tr>
+<tr>
+<td><code>/dev/fuse</code></td>
+<td>不存在</td>
+<td>fuse-overlayfs 不可用</td>
+</tr>
+<tr>
+<td><code>/dev/net/tun</code></td>
+<td>不存在</td>
+<td>slirp4netns 网络模式失败</td>
+</tr>
+<tr>
+<td><code>/sys/fs/cgroup</code></td>
+<td>tmpfs、无 controllers</td>
+<td>cgroup 无法托管</td>
+</tr>
+<tr>
+<td>seccomp &#x2F; userns</td>
+<td>关闭 &#x2F; 可用</td>
+<td>唯一的好消息</td>
+</tr>
+</tbody></table>
+<p><strong>实测过程</strong>：装上 Podman 4.3.1 后，<code>podman run</code> 卡在 <code>fuse-overlayfs: cannot mount: No such file or directory</code>；改 vfs 驱动 + <code>--network=host</code> 也受网络层限制。</p>
+<p><strong>最终建议</strong>：要跑镜像去 HK 轻量服务器（真 VPS、root 完整），这台 2C4G 无 Swap 的机器直接 <code>apt</code> 装运行时（.NET SDK &#x2F; Python &#x2F; Node）最划算。</p>
+<hr>
+<h2 id="7️⃣-Day-2：Xshell-报「所选的用户密钥未在远程主机上注册」"><a href="#7️⃣-Day-2：Xshell-报「所选的用户密钥未在远程主机上注册」" class="headerlink" title="7️⃣ Day 2：Xshell 报「所选的用户密钥未在远程主机上注册」"></a>7️⃣ Day 2：Xshell 报「所选的用户密钥未在远程主机上注册」</h2><p>这是本次排查最曲折的坑，<strong>根因有三个，逐层剥开</strong>：</p>
+<h3 id="坑-A：Xshell-勾了「使用身份验证配置文件」但选的是"><a href="#坑-A：Xshell-勾了「使用身份验证配置文件」但选的是" class="headerlink" title="坑 A：Xshell 勾了「使用身份验证配置文件」但选的是 &lt;未指定&gt;"></a>坑 A：Xshell 勾了「使用身份验证配置文件」但选的是 <code>&lt;未指定&gt;</code></h3><p>从截图发现：<code>☑ 使用身份验证配置文件(A) → &lt;未指定&gt;</code>，且 <code>设置(S)...</code> 按钮是灰的。<br><strong>该模式下 Xshell 忽略手工配置的认证方式，等于什么密钥都没提供。</strong></p>
+<p>✅ 修复：取消勾选 → <code>设置(S)...</code> 变可点 → 在里面选用户密钥。</p>
+<h3 id="坑-B：authorized-keys-那一行带-CRLF（Windows-换行符）"><a href="#坑-B：authorized-keys-那一行带-CRLF（Windows-换行符）" class="headerlink" title="坑 B：authorized_keys 那一行带 CRLF（Windows 换行符）"></a>坑 B：authorized_keys 那一行带 CRLF（Windows 换行符）</h3><p>服务端排查时发现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-ed25519 AAAA...Muke@win10^M$     ← 行尾有 ^M（\r）</span><br></pre></td></tr></table></figure>
+
+<p>OpenSSH 会<strong>整行拒绝</strong>带 <code>\r</code> 的公钥。表现为：公钥登录失败、密码登录正常。</p>
+<p>✅ 修复：<code>sed -i &#39;s/\r$//&#39; /root/.ssh/authorized_keys</code></p>
+<h3 id="坑-C：本地密钥和服务端公钥根本不是一对（指纹不匹配）"><a href="#坑-C：本地密钥和服务端公钥根本不是一对（指纹不匹配）" class="headerlink" title="坑 C：本地密钥和服务端公钥根本不是一对（指纹不匹配）"></a>坑 C：本地密钥和服务端公钥根本不是一对（指纹不匹配）</h3><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>指纹</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>本地 <code>~/.ssh/id_ed25519</code></td>
+<td><code>SHA256:KFwg...</code></td>
+<td>xxxxxxx</td>
+</tr>
+<tr>
+<td>服务端 authorized_keys</td>
+<td><code>SHA256:u4Nk...</code></td>
+<td>Muke@win10</td>
+</tr>
+</tbody></table>
+<p><strong>这才是 Xshell 报”未注册”的准确原因</strong> —— 它没说错，服务器上确实没有本地这把钥匙的公钥。</p>
+<p>✅ 修复：把当前本地公钥追加进 <code>authorized_keys</code>（注意传输时去 <code>\r</code>），<code>ssh-keygen -lf</code> 两边指纹一致后恢复。</p>
+<p><strong>经验总结</strong>：</p>
+<ol>
+<li>公钥认证失败先跑 <code>ssh -vv</code>，看 <code>Offering public key</code> 后服务端是否接受</li>
+<li>两边指纹用 <code>ssh-keygen -lf</code> 对比，比肉眼比对 base64 靠谱</li>
+<li><code>cat -A authorized_keys</code> 一眼看出 CRLF</li>
+<li>公钥从 Windows 传到 Linux，<strong>永远先 <code>tr -d &#39;\r&#39;</code></strong></li>
+</ol>
+<h3 id="附：临时密码（排障用，已实测可用）"><a href="#附：临时密码（排障用，已实测可用）" class="headerlink" title="附：临时密码（排障用，已实测可用）"></a>附：临时密码（排障用，已实测可用）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes / PasswordAuthentication yes，root 密码 Qpaw@Tmp2026</span><br></pre></td></tr></table></figure>
+<p>⚠️ <strong>待办：排障完成后改回 <code>prohibit-password</code> &#x2F; <code>no</code>。</strong></p>
+<p>无 tty 环境测密码登录的技巧：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">&#x27;#!/bin/sh\necho 你的密码\n&#x27;</span> &gt; /tmp/ap.sh &amp;&amp; <span class="built_in">chmod</span> +x /tmp/ap.sh</span><br><span class="line">SSH_ASKPASS=/tmp/ap.sh SSH_ASKPASS_REQUIRE=force DISPLAY=:0 ssh -o PubkeyAuthentication=no root@IP <span class="string">&#x27;echo OK&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="8️⃣-Day-2-3：QwenPaw-网页对话「老是断开、要不停重开窗口」"><a href="#8️⃣-Day-2-3：QwenPaw-网页对话「老是断开、要不停重开窗口」" class="headerlink" title="8️⃣ Day 2~3：QwenPaw 网页对话「老是断开、要不停重开窗口」"></a>8️⃣ Day 2~3：QwenPaw 网页对话「老是断开、要不停重开窗口」</h2><p><strong>结论：QwenPaw 服务端没崩</strong>（进程连续运行 47h+，28 次对话流全部 <code>has_response=True</code> 正常结束）。断的是<strong>浏览器 ↔ 后端的长连接</strong>，四层原因：</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>原因</th>
+<th>证据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><strong>平台反向代理空闲超时</strong>（主因）：模型思考&#x2F;等审批时无数据下发，约 60s 被掐</td>
+<td>容器内无反代进程，连接由 platform.agentscope.io 外部代理接管；SSE 单流最多推 6869 个事件</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>容器出网 NAT 偶发重置</strong></td>
+<td>tailscaled 重连 34 次，<code>PollNetMap: unexpected EOF</code> 多次</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>审批 5 分钟超时</strong>：内核 5.10 &lt; 5.13 无 Landlock → 每条 Bash 都要人工审批，人离开页面就 <code>decision=timeout</code> → 任务被 cancel</td>
+<td><code>sandbox not available</code> 告警 29 次</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>上下文频繁压缩 + session 文件读失败</strong>：单会话累计 prompt 178 万 &#x2F; 窗口 100 万 &#x2F; 阈值 80%；session 状态在 NAS 上偶发读不到</td>
+<td><code>Session file does not exist</code> 多条</td>
+</tr>
+</tbody></table>
+<h3 id="✅-最有效的解法：Tailscale-直连，绕开平台反代"><a href="#✅-最有效的解法：Tailscale-直连，绕开平台反代" class="headerlink" title="✅ 最有效的解法：Tailscale 直连，绕开平台反代"></a>✅ 最有效的解法：Tailscale 直连，绕开平台反代</h3><p><strong>浏览器直接开 <code>http://100.68.168.78:8088</code></strong>（实测 HTTP 200，返回完整 QwenPaw Console 页面）</p>
+<ul>
+<li>不经过 platform.agentscope.io，无空闲超时</li>
+<li>平台域名只留做「升级 QwenPaw &#x2F; 重启容器」等管理操作</li>
+</ul>
+<p><strong>配套习惯</strong>：</p>
+<ul>
+<li>审批弹窗出现后立刻处理（5 分钟必超时）</li>
+<li>聊天窗口保持前台（Chrome 后台标签会被节流）</li>
+<li>每天开新会话，别把上下文堆到百万级</li>
+<li>重活直接 <code>ssh root@100.68.168.78</code>，命令行无超时</li>
+</ul>
+<hr>
+<h2 id="9-最终遗留待办"><a href="#9-最终遗留待办" class="headerlink" title="9. 最终遗留待办"></a>9. 最终遗留待办</h2><table>
+<thead>
+<tr>
+<th>事项</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Xshell 密钥登录</td>
+<td>密钥已修复，待用户实测确认</td>
+</tr>
+<tr>
+<td>关闭临时密码（改回 prohibit-password + no）</td>
+<td>⏳ 待确认后执行</td>
+</tr>
+<tr>
+<td>跑 Docker 镜像需求</td>
+<td>转移到 HK 轻量服务器</td>
+</tr>
+<tr>
+<td>48h 休眠保活</td>
+<td>偶尔上去跑个命令即可</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://jian134.github.io/jianBlog">Muke</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jian134.github.io/jianBlog/2026/11/04/2026/11/%E7%99%BD%E5%AB%96QwenPaw/">https://jian134.github.io/jianBlog/2026/11/04/2026/11/%E7%99%BD%E5%AB%96QwenPaw/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://jian134.github.io/jianBlog" target="_blank">Jian-Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/jianBlog/tags/%E8%B5%84%E6%BA%90/">资源</a></div><div class="post-share"><div class="social-share" data-image="/jianBlog/images/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/jianBlog/2026/11/05/2026/11/%E9%80%BC%E5%93%A5%E8%A2%AB%E9%80%BC%E8%B5%B0/" title="逼哥被逼走"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">逼哥被逼走</div></div><div class="info-2"><div class="info-item-1">昨天开始就已经在吃瓜了公司一位架构小哥每天正常干活,平时爱好装装逼,今天早上忽然爆发了,说产品一直无缘无故艾特他,并且是每天下班时候.想起还在古法编程的时候,钉钉一响真是神经紧绷,后续剧情发生在第二天早上了 故事开始群聊人物与时间线整理 人物代称已更新：小道士 &#x2F; 嘴哥 &#x2F; 领导 &#x2F; 路人甲。说明：根据长截图可识别文字整理；个别图片、表情、折行和最后一条内容识别不清，暂不纳入结论。  一、人物   代称 身份推断 关键行为    小道士 技术&#x2F;开发执行者 被频繁 @；负责排查缓存、数据库、name 字段&#x2F;昵称显示问题；对“刚离开公司就被 @”明显不满   嘴哥 需求提出&#x2F;验收方 反馈“这个对不上”，要求确认取昵称还是姓名；多次 @ 小道士推进问题   领导 同事&#x2F;协调角色 参与缓存问题排查；第二天询问小道士的考勤情况   路人甲 OTA 运营 被嘴哥提醒要经常看数据、主动提出问题；回复“收到”   人物关系：  小道士 ↔ 嘴哥：主要冲突线。嘴哥连续 @ 小道士催办，小道士认为应先记录&#x2F;提禅道，而不是...</div></div></div></a><a class="pagination-related" href="/jianBlog/2026/06/15/2026/05/%E6%B7%B1%E5%9C%B3%E5%AE%B6%E6%94%BF%E5%A4%AA%E6%81%90%E6%80%96/" title="深圳家政太恐怖"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">深圳家政太恐怖</div></div><div class="info-2"><div class="info-item-1">接小宝到深圳来小宝1岁3个月了。18号就要去贵阳接他，19号就能把他带到深圳。虽然还有些细节没最后敲定，但好久没见他，还是很期待的。 只是现实的难题摆在了面前…… 第一站：天真的咨询我们在闲鱼上找了几家中介机构咨询，本以为专业的事就交给专业的人。结果呢？ 期望 ✓ 一个靠谱的对接人全程跟进现实 ✗ 售前售后换了3个人，每个人说的都不一样 整个过程被折腾得晕头转向。最后他们推荐了4个广东阿姨，姑且算是有了方向。 第二站：小红书的真相我本来也没太在意，直到刷小红书的避雷帖—— 才明白这些机构的套路有多深：  收完佣金 → 立马消失 问题来了 → 形同虚设 差评 → 层出不穷 都是一样的故事 → 伪造简历、实际不符、推诿责任  看着那些父母们的遭遇，我的心就凉了半截。 第三站：两条路，都不容易选项1：直接上托班看起来很专业：  一次性缴纳3个月费用 + 杂费 总共约 1.5万元以上 有专业的人照顾  但问题是：  小宝没打过手足口疫苗，在集体环境感染风险高 我和妻子都没完整带过孩子的经验 小宝脾气比较倔，怕上托班会很难受 心理上有些舍不得  选项2：先找阿姨过渡优势：  经济上更从容 ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/jianBlog/2025/11/26/11/%E8%B5%84%E6%BA%90%E9%9A%BE%E9%A2%98/" title="资源难题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-26</div><div class="info-item-2">资源难题</div></div><div class="info-2"><div class="info-item-1">想找个资源也太难了“大陆能直接打开、真正敢把 1080p&#x2F;4K 原盘放出来给你直链下载的‘纯电影站’，现在基本没有了。”2022 年以后，境内网站凡出现「未备案 + 提供版权影视本体」会被网安「秒拔线」；备案的大厂（百度&#x2F;阿里&#x2F;迅雷）又只让走“网盘秒传、哈希拉取”这种擦边模式。   在中国大陆，由于版权和网络监管政策的严格执行，任何直接提供盗版电影资源的网站都存在法律风险，并且随时可能被关停。如果你希望合法下载或在线观看电影，建议通过以下正规渠道获取：  ✅ 中国大陆正规电影下载&#x2F;观看渠道1. 正版影视平台（可下载&#x2F;离线观看）   平台 特点 下载方式 价格    腾讯视频（VIP） 提供部分电影4K&#x2F;HDR下载（DRM加密） 仅限客户端下载 VIP + 单片付费（$3-$15）   爱奇艺（帧绮映画） 部分电影支持4K杜比视界 需会员 + 单买下载版权 ¥12-25&#x2F;部   优酷（VIP） 经典老片较多 支持1080P下载 VIP或单片购买   B站（哔哩哔哩） 部分电影、纪录片可缓存 最高1080P 大会员...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Muke</div><div class="author-info-description">热爱生活，探索技术，半AI古法工程师,顺便记录美好时光</div><div class="site-data"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">48</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">65</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">46</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jianke3821"><i class="fab fa-github"></i><span>关注我</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！这里记录着我的技术笔记、生活感悟和有趣的发现。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%B3%E6%89%BE%E4%B8%AA%E8%B5%84%E6%BA%90%E4%B9%9F%E5%A4%AA%E9%9A%BE%E4%BA%86"><span class="toc-number">1.</span> <span class="toc-text">想找个资源也太难了</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AgentScope-Platform-QwenPaw-%E5%85%8D%E8%B4%B9%E5%AE%B9%E5%99%A8%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95"><span class="toc-number"></span> <span class="toc-text">AgentScope Platform &#x2F; QwenPaw 免费容器踩坑记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E7%8E%AF%E5%A2%83%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">0. 环境速查表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%EF%B8%8F%E2%83%A3-Day-1%EF%BC%8811-03%EF%BC%89%EF%BC%9AAgentScope-%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">2.</span> <span class="toc-text">1️⃣ Day 1（11-03）：AgentScope 免费空间是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%EF%B8%8F%E2%83%A3-Day-1%EF%BC%9A%E6%80%8E%E4%B9%88%E6%9F%A5-IP-%E7%A1%AC%E7%9B%98-%E8%B7%91%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">2️⃣ Day 1：怎么查 IP &#x2F; 硬盘 &#x2F; 跑命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%EF%B8%8F%E2%83%A3-Day-1%EF%BC%9A%E6%9C%AC%E5%9C%B0%E8%A3%85-Tailscale"><span class="toc-number">4.</span> <span class="toc-text">3️⃣ Day 1：本地装 Tailscale</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%EF%B8%8F%E2%83%A3-Day-2%EF%BC%8811-04%EF%BC%89%EF%BC%9A-C-Muke-win10-%E6%98%AF%E9%82%AE%E7%AE%B1%E5%90%97"><span class="toc-number">5.</span> <span class="toc-text">4️⃣ Day 2（11-04）：-C &quot;Muke@win10&quot; 是邮箱吗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%EF%B8%8F%E2%83%A3-Day-2%EF%BC%9ASSH-%E9%A6%96%E6%AC%A1%E8%BF%9E%E9%80%9A-%E7%A1%AC%E4%BB%B6%E5%AE%9E%E6%B5%8B"><span class="toc-number">6.</span> <span class="toc-text">5️⃣ Day 2：SSH 首次连通 + 硬件实测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%EF%B8%8F%E2%83%A3-Day-2%EF%BC%9A%E6%83%B3%E8%A3%85-Docker-%E2%80%94%E2%80%94-%E2%9B%94-%E6%AD%A4%E8%B7%AF%E4%B8%8D%E9%80%9A%EF%BC%88%E6%9C%80%E5%A4%A7%E5%9D%91%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">6️⃣ Day 2：想装 Docker —— ⛔ 此路不通（最大坑）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%EF%B8%8F%E2%83%A3-Day-2%EF%BC%9AXshell-%E6%8A%A5%E3%80%8C%E6%89%80%E9%80%89%E7%9A%84%E7%94%A8%E6%88%B7%E5%AF%86%E9%92%A5%E6%9C%AA%E5%9C%A8%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E4%B8%8A%E6%B3%A8%E5%86%8C%E3%80%8D"><span class="toc-number">8.</span> <span class="toc-text">7️⃣ Day 2：Xshell 报「所选的用户密钥未在远程主机上注册」</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91-A%EF%BC%9AXshell-%E5%8B%BE%E4%BA%86%E3%80%8C%E4%BD%BF%E7%94%A8%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E3%80%8D%E4%BD%86%E9%80%89%E7%9A%84%E6%98%AF"><span class="toc-number">8.1.</span> <span class="toc-text">坑 A：Xshell 勾了「使用身份验证配置文件」但选的是 &lt;未指定&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91-B%EF%BC%9Aauthorized-keys-%E9%82%A3%E4%B8%80%E8%A1%8C%E5%B8%A6-CRLF%EF%BC%88Windows-%E6%8D%A2%E8%A1%8C%E7%AC%A6%EF%BC%89"><span class="toc-number">8.2.</span> <span class="toc-text">坑 B：authorized_keys 那一行带 CRLF（Windows 换行符）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%91-C%EF%BC%9A%E6%9C%AC%E5%9C%B0%E5%AF%86%E9%92%A5%E5%92%8C%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%85%AC%E9%92%A5%E6%A0%B9%E6%9C%AC%E4%B8%8D%E6%98%AF%E4%B8%80%E5%AF%B9%EF%BC%88%E6%8C%87%E7%BA%B9%E4%B8%8D%E5%8C%B9%E9%85%8D%EF%BC%89"><span class="toc-number">8.3.</span> <span class="toc-text">坑 C：本地密钥和服务端公钥根本不是一对（指纹不匹配）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%99%84%EF%BC%9A%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81%EF%BC%88%E6%8E%92%E9%9A%9C%E7%94%A8%EF%BC%8C%E5%B7%B2%E5%AE%9E%E6%B5%8B%E5%8F%AF%E7%94%A8%EF%BC%89"><span class="toc-number">8.4.</span> <span class="toc-text">附：临时密码（排障用，已实测可用）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%EF%B8%8F%E2%83%A3-Day-2-3%EF%BC%9AQwenPaw-%E7%BD%91%E9%A1%B5%E5%AF%B9%E8%AF%9D%E3%80%8C%E8%80%81%E6%98%AF%E6%96%AD%E5%BC%80%E3%80%81%E8%A6%81%E4%B8%8D%E5%81%9C%E9%87%8D%E5%BC%80%E7%AA%97%E5%8F%A3%E3%80%8D"><span class="toc-number">9.</span> <span class="toc-text">8️⃣ Day 2~3：QwenPaw 网页对话「老是断开、要不停重开窗口」</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E6%9C%80%E6%9C%89%E6%95%88%E7%9A%84%E8%A7%A3%E6%B3%95%EF%BC%9ATailscale-%E7%9B%B4%E8%BF%9E%EF%BC%8C%E7%BB%95%E5%BC%80%E5%B9%B3%E5%8F%B0%E5%8F%8D%E4%BB%A3"><span class="toc-number">9.1.</span> <span class="toc-text">✅ 最有效的解法：Tailscale 直连，绕开平台反代</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%9C%80%E7%BB%88%E9%81%97%E7%95%99%E5%BE%85%E5%8A%9E"><span class="toc-number">10.</span> <span class="toc-text">9. 最终遗留待办</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/11/05/2026/11/%E9%80%BC%E5%93%A5%E8%A2%AB%E9%80%BC%E8%B5%B0/" title="逼哥被逼走">逼哥被逼走</a><time datetime="2026-11-04T16:00:00.000Z" title="发表于 2026-11-05 00:00:00">2026-11-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/11/04/2026/11/%E7%99%BD%E5%AB%96QwenPaw/" title="QwenPaw 踩坑记录">QwenPaw 踩坑记录</a><time datetime="2026-11-03T16:00:00.000Z" title="发表于 2026-11-04 00:00:00">2026-11-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/06/15/2026/05/%E6%B7%B1%E5%9C%B3%E5%AE%B6%E6%94%BF%E5%A4%AA%E6%81%90%E6%80%96/" title="深圳家政太恐怖">深圳家政太恐怖</a><time datetime="2026-06-14T16:00:00.000Z" title="发表于 2026-06-15 00:00:00">2026-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/06/13/2026/05/%E6%9C%89%E4%BA%86%E6%96%B0%E7%9A%84%E7%94%B5%E8%BD%A6/" title="深圳的第二辆电车">深圳的第二辆电车</a><time datetime="2026-06-12T16:00:00.000Z" title="发表于 2026-06-13 00:00:00">2026-06-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/06/09/2026/05/%E6%89%98%E8%82%B2/" title="整理了关于宝安和龙华的托育园">整理了关于宝安和龙华的托育园</a><time datetime="2026-06-08T16:00:00.000Z" title="发表于 2026-06-09 00:00:00">2026-06-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/jianBlog/img/foot.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Muke</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div><div class="footer_custom_text">感谢您的访问，希望您喜欢这个博客！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/jianBlog/js/utils.js"></script><script src="/jianBlog/js/main.js"></script><div class="js-pjax"></div><script src="/js/random-banner.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
