@@ -1,0 +1,679 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨 | Jian-Blog</title><meta name="author" content="Muke"><meta name="copyright" content="Muke"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="用可核实的月度数据，复盘 2026 年 1—11 月显卡、SSD、HDD 的涨价路径：三轮显卡提价、一次内存回调、一次单日暴跌，以及背后的产能再分配逻辑。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨">
+<meta property="og:url" content="https://jian134.github.io/jianBlog/2026/11/06/2026/11/2026%E7%9A%84PC%E5%B8%82%E5%9C%BA/index.html">
+<meta property="og:site_name" content="Jian-Blog">
+<meta property="og:description" content="用可核实的月度数据，复盘 2026 年 1—11 月显卡、SSD、HDD 的涨价路径：三轮显卡提价、一次内存回调、一次单日暴跌，以及背后的产能再分配逻辑。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jian134.github.io/jianBlog/images/avatar.jpg">
+<meta property="article:published_time" content="2026-11-06T08:45:00.000Z">
+<meta property="article:modified_time" content="2026-11-06T09:30:23.136Z">
+<meta property="article:author" content="Muke">
+<meta property="article:tag" content="硬件">
+<meta property="article:tag" content="装机">
+<meta property="article:tag" content="数据分析">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jian134.github.io/images/avatar.jpg">
+<meta name="twitter:site" content="@JianBlog"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨",
+  "url": "https://jian134.github.io/jianBlog/2026/11/06/2026/11/2026%E7%9A%84PC%E5%B8%82%E5%9C%BA/",
+  "image": "https://jian134.github.io/jianBlog/images/avatar.jpg",
+  "datePublished": "2026-11-06T08:45:00.000Z",
+  "dateModified": "2026-11-06T09:30:23.136Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Muke",
+      "url": "https://jian134.github.io/jianBlog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/jianBlog/img/favicon.ico"><link rel="canonical" href="https://jian134.github.io/jianBlog/2026/11/06/2026/11/2026%E7%9A%84PC%E5%B8%82%E5%9C%BA/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="your-google-verification-code"/><meta name="baidu-site-verification" content="your-baidu-verification-code"/><meta name="msvalidate.01" content="your-bing-verification-code"/><link rel="stylesheet" href="/jianBlog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/jianBlog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="author" content="Muke - Jian-Blog"><meta name="description" content="记录生活与技术 - 一个分享技术、生活和思考的个人博客"><meta name="keywords" content="博客,技术,生活,编程,Jian-Blog,Muke"><meta property="og:site_name" content="Jian-Blog"><meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta name="theme-color" content="#E67E22"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/img/butterfly-icon.png"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/jianBlog/url(https:/source.unsplash.com/random/1920x1080/?nature,water));"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">72</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">48</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url(/jianBlog/img/kong.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/jianBlog/"><img class="site-icon" src="/jianBlog/img/butterfly-icon.png" alt="Logo"><span class="site-name">Jian-Blog</span></a><a class="nav-page-title" href="/jianBlog/"><span class="site-name">2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/jianBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/jianBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-11-06T08:45:00.000Z" title="发表于 2026-11-06 16:45:00">2026-11-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-11-06T09:30:23.136Z" title="更新于 2026-11-06 17:30:23">2026-11-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/jianBlog/categories/%E6%8A%80%E6%9C%AF%E8%A7%82%E5%AF%9F/">技术观察</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="一句话结论"><a href="#一句话结论" class="headerlink" title="一句话结论"></a>一句话结论</h2><p>2026 年不是”显卡涨价年”，而是<strong>存储产能再分配年</strong>。AI 数据中心把 DRAM、NAND、GDDR 的产能抽走，价格从内存端起爆，经由显存传导到显卡，经由 NAND 传导到 SSD，再经由”替代效应”反推到 HDD。全年可核实的三次显卡全线提价，全部是显存成本被动传导，没有一次是需求驱动。</p>
+<table>
+<thead>
+<tr>
+<th>品类</th>
+<th>起点（2025 年低位）</th>
+<th>2026 年 10 月</th>
+<th>累计涨幅</th>
+<th>峰值时点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DDR5 内存（德国零售指数）</td>
+<td>100</td>
+<td>459</td>
+<td><strong>+359%</strong>（5.6 倍）</td>
+<td>10 月，仍在上行</td>
+</tr>
+<tr>
+<td>DDR4 内存</td>
+<td>100</td>
+<td>300–400</td>
+<td>+200%–300%</td>
+<td>10 月，单月仍 +19%</td>
+</tr>
+<tr>
+<td>消费级 SSD（美国零售 1TB）</td>
+<td>100</td>
+<td>约 177（9 月）</td>
+<td>+77%，合约价约 3 倍</td>
+<td><strong>7 月</strong>，8 月起回落</td>
+</tr>
+<tr>
+<td>机械硬盘（德国零售）</td>
+<td>100</td>
+<td>250+</td>
+<td>+150%</td>
+<td>10 月，涨势趋平</td>
+</tr>
+<tr>
+<td>显卡（德国零售，全品类）</td>
+<td>100</td>
+<td>150–170</td>
+<td>+50%–70%</td>
+<td>10 月，10&#x2F;28 首跌</td>
+</tr>
+<tr>
+<td>显卡（国内旗舰现货）</td>
+<td>100</td>
+<td>约 250</td>
+<td>+150%</td>
+<td>10 月中，10&#x2F;28 单日暴跌</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>口径提醒：本文严格区分三类价格——<strong>合约价</strong>（原厂对大客户，季度调价）、<strong>渠道价</strong>（代理商&#x2F;现货）、<strong>零售价</strong>（电商&#x2F;柜台）。三者的涨幅经常差一倍以上，混着引用是这轮讨论里最常见的错误。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="一、先看源头：内存的十二个月"><a href="#一、先看源头：内存的十二个月" class="headerlink" title="一、先看源头：内存的十二个月"></a>一、先看源头：内存的十二个月</h2><p>这一轮所有硬件涨价，起点都是同一件事：三星、SK 海力士、美光把 70%–90% 的先进产能转向 HBM 与服务器 DRAM，消费级 DRAM&#x2F;NAND 的供给被结构性压缩。HBM 的单位利润约为普通 DDR5 的三倍，这个价差决定了产能去向。</p>
+<h3 id="1-1-DDR5-现货指数（3DCenter，2025-年-7-月-100）"><a href="#1-1-DDR5-现货指数（3DCenter，2025-年-7-月-100）" class="headerlink" title="1.1 DDR5 现货指数（3DCenter，2025 年 7 月 &#x3D; 100）"></a>1.1 DDR5 现货指数（3DCenter，2025 年 7 月 &#x3D; 100）</h3><table>
+<thead>
+<tr>
+<th>月份</th>
+<th>指数</th>
+<th>月环比</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025-07</td>
+<td>100</td>
+<td>—</td>
+<td>基准</td>
+</tr>
+<tr>
+<td>2025-10</td>
+<td>119</td>
+<td>+15.8%</td>
+<td>起涨</td>
+</tr>
+<tr>
+<td>2025-11</td>
+<td>179</td>
+<td>+49.5%</td>
+<td>三星&#x2F;海力士砍消费级供给</td>
+</tr>
+<tr>
+<td>2025-12</td>
+<td>345</td>
+<td><strong>+93.0%</strong></td>
+<td>单月最大涨幅</td>
+</tr>
+<tr>
+<td>2026-01</td>
+<td>440</td>
+<td>+27.6%</td>
+<td>恐慌性补货</td>
+</tr>
+<tr>
+<td>2026-02</td>
+<td>440</td>
+<td>0%</td>
+<td>高位横盘</td>
+</tr>
+<tr>
+<td>2026-03</td>
+<td>408</td>
+<td><strong>-7.2%</strong></td>
+<td><strong>本轮唯一明显回调</strong></td>
+</tr>
+<tr>
+<td>2026-04</td>
+<td>410</td>
+<td>+0.3%</td>
+<td>回调结束</td>
+</tr>
+<tr>
+<td>2026-05</td>
+<td>414</td>
+<td>+1.1%</td>
+<td>二次起步</td>
+</tr>
+<tr>
+<td>2026-06</td>
+<td>419</td>
+<td>+1.0%</td>
+<td>云厂商锁长约</td>
+</tr>
+<tr>
+<td>2026-07</td>
+<td>—</td>
+<td>上行</td>
+<td>显卡涨价潮叠加</td>
+</tr>
+<tr>
+<td>2026-08</td>
+<td>—</td>
+<td>上行</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2026-09→10</td>
+<td>459</td>
+<td>+2.7%</td>
+<td>涨幅收窄，价格不降</td>
+</tr>
+</tbody></table>
+<p>3 月那次 -7.2% 是全年唯一的”假拐点”。它只撑了一个季度，二季度起重启上涨。<strong>把”涨幅收窄”读成”即将降价”，是这轮最贵的误判。</strong></p>
+<h3 id="1-2-原厂合约价：涨幅远比零售剧烈"><a href="#1-2-原厂合约价：涨幅远比零售剧烈" class="headerlink" title="1.2 原厂合约价：涨幅远比零售剧烈"></a>1.2 原厂合约价：涨幅远比零售剧烈</h3><p>TrendForce 的 DDR5 16Gb 颗粒报价（美元&#x2F;颗），月环比按公布值计算：</p>
+<table>
+<thead>
+<tr>
+<th>月份</th>
+<th>报价</th>
+<th>月环比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026-01</td>
+<td>34.34</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2026-02</td>
+<td>38.25</td>
+<td>+11.4%</td>
+</tr>
+<tr>
+<td>2026-03</td>
+<td>38.98</td>
+<td>+1.9%</td>
+</tr>
+<tr>
+<td>2026-04</td>
+<td>37.87</td>
+<td>-2.8%</td>
+</tr>
+<tr>
+<td>2026-05</td>
+<td>40.66</td>
+<td>+7.4%</td>
+</tr>
+<tr>
+<td>2026-06</td>
+<td>44.95</td>
+<td>+10.6%</td>
+</tr>
+<tr>
+<td>2026-07</td>
+<td>49.03</td>
+<td>+9.1%</td>
+</tr>
+<tr>
+<td>2026-08</td>
+<td>52.84</td>
+<td>+7.8%</td>
+</tr>
+</tbody></table>
+<p>1—8 月累计 +53.9%。同期国内 DDR5 RDIMM 96GB 合约价从 1300 美元涨到 2310 美元，<strong>+78%</strong>，服务器端的涨幅明显高于消费级——因为原厂优先满足北美服务器客户。</p>
+<h3 id="1-3-季度合约涨幅（TrendForce-CFM）"><a href="#1-3-季度合约涨幅（TrendForce-CFM）" class="headerlink" title="1.3 季度合约涨幅（TrendForce &#x2F; CFM）"></a>1.3 季度合约涨幅（TrendForce &#x2F; CFM）</h3><table>
+<thead>
+<tr>
+<th>季度</th>
+<th>常规 DRAM</th>
+<th>NAND 闪存</th>
+<th>关键动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025-Q4</td>
+<td>—</td>
+<td>+5%~10%</td>
+<td>起涨</td>
+</tr>
+<tr>
+<td>2026-Q1</td>
+<td><strong>+55%~60%</strong></td>
+<td>+55%<del>60%（3 月上调至 +85%</del>90%）</td>
+<td>一季度内三次上修预测</td>
+</tr>
+<tr>
+<td>2026-Q2</td>
+<td>—</td>
+<td><strong>+70%~75%</strong></td>
+<td>云厂商签长约</td>
+</tr>
+<tr>
+<td>2026-Q3</td>
+<td>+13%~18%</td>
+<td>+10%~15%</td>
+<td>消费端触顶，涨幅收窄</td>
+</tr>
+<tr>
+<td>2026-Q4（预测）</td>
+<td>+10%<del>15%（含 HBM +15%</del>20%）</td>
+<td>+15%~20%</td>
+<td>企业级 SSD +23%~28%</td>
+</tr>
+</tbody></table>
+<p>Q1 的预测上调轨迹值得记录：1 月给 +33%<del>38%，2 月改成 +55%</del>60%，3 月直接报到 +85%~90%。<strong>一个季度内把预测翻了 2.4 倍，说明连原厂自己都没预料到缺口深度。</strong></p>
+<h2 id="二、月度时间线：显卡与硬盘的十二个月"><a href="#二、月度时间线：显卡与硬盘的十二个月" class="headerlink" title="二、月度时间线：显卡与硬盘的十二个月"></a>二、月度时间线：显卡与硬盘的十二个月</h2><h3 id="1-月｜第一轮：显存先涨，显卡小步跟"><a href="#1-月｜第一轮：显存先涨，显卡小步跟" class="headerlink" title="1 月｜第一轮：显存先涨，显卡小步跟"></a>1 月｜第一轮：显存先涨，显卡小步跟</h3><ul>
+<li>英伟达与 AMD 同步上调显存采购价，幅度按规格 <strong>10%–15%</strong>。</li>
+<li>部分 AIC 开始调整 GPU 套装报价，零售端尚未大面积反应。</li>
+<li>DDR5 现货指数 +27.6%，站上 440。</li>
+<li>HDD 此时已连续上行，2 月德国零售数据将显示”比 5 个月前贵 51%”。</li>
+<li>传闻 RTX 50 Super 因显存短缺”可能取消”。</li>
+</ul>
+<p><strong>本月关键词：成本先动，终端未动。</strong></p>
+<h3 id="2-月｜产能售罄官宣"><a href="#2-月｜产能售罄官宣" class="headerlink" title="2 月｜产能售罄官宣"></a>2 月｜产能售罄官宣</h3><ul>
+<li>西部数据 CEO 在财报会明确表态：公司 <strong>2026 年产能”基本售罄”</strong>，前七大客户已下确定订单，其中两家签了 2027 年长约、一家签到 2028 年。</li>
+<li>希捷同期确认 nearline 产能已分配至 2026 年底。</li>
+<li>NAND Q1 预测从 +33%<del>38% 上修至 +55%</del>60%。</li>
+<li>德国零售 HDD 较 5 个月前 <strong>+51%</strong>；消费级 SSD 起涨，1TB NVMe 中位价约 120 美元。</li>
+<li>DDR5 指数持平于 440，涨势暂停。</li>
+</ul>
+<p><strong>本月关键词：卖方市场正式确立。</strong></p>
+<h3 id="3-月｜唯一的回调，也是最后一次机会"><a href="#3-月｜唯一的回调，也是最后一次机会" class="headerlink" title="3 月｜唯一的回调，也是最后一次机会"></a>3 月｜唯一的回调，也是最后一次机会</h3><ul>
+<li>消费级 DDR5 现货在 3 月底出现明显回落，指数 -7.2%，是本轮唯一一次像样的回调。</li>
+<li>但合约端反向走强：NAND Q1 预测再上调至 <strong>+85%~90%</strong>，客户端 SSD 合约涨幅”至少 +40%”。</li>
+<li>DDR5 RDIMM 96GB 月低点从 1080 跳到 1350 美元。</li>
+<li>SSD 零售 135 美元，DDR5 芯片 38.98 美元。</li>
+</ul>
+<p><strong>本月关键词：现货跌、合约涨——信号分裂的开始。</strong></p>
+<h3 id="4-月｜二次冲高"><a href="#4-月｜二次冲高" class="headerlink" title="4 月｜二次冲高"></a>4 月｜二次冲高</h3><ul>
+<li>DDR5 芯片小幅回落至 37.87（-2.8%），但 RDIMM 合约从 1600 跳至 1980 美元（<strong>+24%</strong>）。</li>
+<li>Q2 开季，TrendForce 给出 NAND <strong>+70%~75%</strong> 的季度预测，全年最猛。</li>
+<li>SSD 零售 150 美元；国内 32GB DDR5 套装被报到 2799 元。</li>
+<li>显卡端仍相对安静，处于第一轮调价的消化期。</li>
+</ul>
+<p><strong>本月关键词：服务器端先于消费端加速。</strong></p>
+<h3 id="5-月｜旗舰先涨，其余不动"><a href="#5-月｜旗舰先涨，其余不动" class="headerlink" title="5 月｜旗舰先涨，其余不动"></a>5 月｜旗舰先涨，其余不动</h3><ul>
+<li>英伟达上调 <strong>RTX 5090 &#x2F; 5090D V2</strong> 的 GPU 套装价格，其余型号未受波及。</li>
+<li>这是全年三轮提价中最窄的一次，只动了旗舰。</li>
+<li>DDR5 指数 +1.1%（414）；RDIMM 2180 美元；SSD 零售 165 美元。</li>
+<li>云厂商集中签长期供货协议，锁定 2026 全年产能。</li>
+</ul>
+<p><strong>本月关键词：局部调价，试探市场。</strong></p>
+<h3 id="6-月｜长约锁死产能"><a href="#6-月｜长约锁死产能" class="headerlink" title="6 月｜长约锁死产能"></a>6 月｜长约锁死产能</h3><ul>
+<li>DDR5 芯片 44.95 美元（+10.6%），指数 419。</li>
+<li>RDIMM 96GB 2310 美元；SSD 零售 180 美元。</li>
+<li>供应链口径：所有 NAND 原厂均表示”2026 年已售罄”。</li>
+<li>传闻 RTX 50 Super”回到正轨”，但未获官方确认。</li>
+</ul>
+<p><strong>本月关键词：供给被合约提前吃掉。</strong></p>
+<h3 id="7-月｜分水岭：显卡全系提价"><a href="#7-月｜分水岭：显卡全系提价" class="headerlink" title="7 月｜分水岭：显卡全系提价"></a>7 月｜分水岭：显卡全系提价</h3><p>这是全年的转折点，也是涨价从”存储品类”蔓延到”整机品类”的月份。</p>
+<ul>
+<li><strong>7 月 24—28 日</strong>：英伟达向全球 AIC 发出新一轮 GPU 套装涨价通知，涨幅 <strong>20%~30%（最高 30%）</strong>，<strong>同时覆盖 GDDR7 与上一代 GDDR6</strong>。这意味着 RTX 5050 及更早型号（如重返市场的 RTX 3060 12GB）全部受影响。</li>
+<li>各大品牌工厂执行<strong>封仓</strong>，暂停批量出货，流通环节现货瞬间收紧。</li>
+<li>华强北报价单失效：”一天一个价，日均涨 500—1000 元”。</li>
+<li>具体跳价：RTX 5070 从 4500–5000 元到 6000–6500 元；RTX 5080 从 8000 元到接近 12000 元。</li>
+<li>SSD 零售触顶：1TB NVMe 约 190 美元，折 <strong>215 美元&#x2F;TB</strong>，为全年峰值；国内 SSD 批发价从 300—400 元涨到 800 元以上。</li>
+<li>HDD 渠道价：希捷 24TB 从约 700 美元涨到 1150 美元。</li>
+<li>AMD 同期对板卡伙伴上调显存套装价约 10%。</li>
+</ul>
+<p><strong>本月关键词：封仓 + 套装涨价，渠道恐慌性定价。</strong></p>
+<h3 id="8-月｜全线报价重估"><a href="#8-月｜全线报价重估" class="headerlink" title="8 月｜全线报价重估"></a>8 月｜全线报价重估</h3><p>华强北实探报价（8 月初，对比涨价前）：</p>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>涨价前</th>
+<th>8 月初</th>
+<th>涨幅</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RTX 5060 8G</td>
+<td>2300–2500</td>
+<td>2700–3100</td>
+<td>+17%~24%</td>
+</tr>
+<tr>
+<td>RTX 5060 16G</td>
+<td>3000+</td>
+<td>5000+</td>
+<td>+60% 以上</td>
+</tr>
+<tr>
+<td>RTX 5060 Ti 8G</td>
+<td>2350</td>
+<td>3400</td>
+<td>+45%</td>
+</tr>
+<tr>
+<td>RTX 5070</td>
+<td>4500–5000</td>
+<td>6000–6500</td>
+<td>+30%~33%</td>
+</tr>
+<tr>
+<td>RTX 5070 Ti</td>
+<td>—</td>
+<td>8000+</td>
+<td>—</td>
+</tr>
+<tr>
+<td>RTX 5080</td>
+<td>8000–9000</td>
+<td>11000–14000</td>
+<td>+38%~56%</td>
+</tr>
+<tr>
+<td>RTX 5090</td>
+<td>约 20000</td>
+<td>约 35000</td>
+<td><strong>+75%</strong></td>
+</tr>
+<tr>
+<td>RTX 3060 12G（二手）</td>
+<td>—</td>
+<td>+100~200 元</td>
+<td>大显存二手跟涨</td>
+</tr>
+</tbody></table>
+<ul>
+<li>30TB 企业级近线 HDD 报 1216 美元（2025 年 Q3 为 495 美元，<strong>2.5 倍</strong>）。</li>
+<li>企业级 30TB TLC SSD 从 3460 美元涨到 22600 美元（<strong>6.5 倍</strong>，合约口径）。</li>
+<li>消费级 SSD 零售开始回落至 185 美元。</li>
+<li>装机成本同比去年 10 月 <strong>+2000 元</strong>。</li>
+</ul>
+<p><strong>本月关键词：显卡成为最贵的那一件。</strong></p>
+<h3 id="9-月｜显存断供，第三代显存停产"><a href="#9-月｜显存断供，第三代显存停产" class="headerlink" title="9 月｜显存断供，第三代显存停产"></a>9 月｜显存断供，第三代显存停产</h3><ul>
+<li><strong>美光停产用于 RTX 50 系列的 2GB GDDR7 颗粒</strong>，供应商只剩三星与 SK 海力士两家。</li>
+<li>GDDR7 现货每 2GB 上涨近 20 美元。</li>
+<li>希捷自 <strong>9 月 11 日</strong>起对 16TB 以上企业盘提价约 <strong>10%</strong>；东芝预告 20—24TB 下季度再涨约 10%。</li>
+<li>HDD 现货溢价达到 <strong>30%–40%</strong>（长约客户不受影响，散单承担全部溢价）。</li>
+<li>美国 RTX 5070 Ti 最低在售价 <strong>1119 美元</strong>，对 MSRP 749 美元溢价近 50%。</li>
+<li>二手 RTX 3090 均价 1463 美元，30 天涨 13.8%，接近首发价。</li>
+<li>SSD 零售 177 美元，继续回落。</li>
+</ul>
+<p><strong>本月关键词：显存颗粒断供，涨价从”贵”变成”没有”。</strong></p>
+<h3 id="10-月｜涨幅收窄，然后单日暴跌"><a href="#10-月｜涨幅收窄，然后单日暴跌" class="headerlink" title="10 月｜涨幅收窄，然后单日暴跌"></a>10 月｜涨幅收窄，然后单日暴跌</h3><p>这是全年数据最密集、也最容易被误读的一个月。</p>
+<p>3DCenter 9→10 月各品类环比（德国零售口径）：</p>
+<table>
+<thead>
+<tr>
+<th>品类</th>
+<th>月环比</th>
+<th>相对危机前</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DDR5</td>
+<td>+2.7%</td>
+<td><strong>5.6 倍</strong>（累计 +459%）</td>
+</tr>
+<tr>
+<td>DDR3 + DDR4</td>
+<td>+18.1%（DDR4 单月 +19%）</td>
+<td>3–4 倍</td>
+</tr>
+<tr>
+<td>笔记本 SODIMM</td>
+<td>+6.8%</td>
+<td>4.2 倍</td>
+</tr>
+<tr>
+<td>内置 SSD</td>
+<td>+9.6%</td>
+<td>2.5 倍</td>
+</tr>
+<tr>
+<td>内置 HDD</td>
+<td>+0.6%</td>
+<td>2.5 倍以上</td>
+</tr>
+<tr>
+<td>外置硬盘</td>
+<td>+2.4%</td>
+<td>约 2 倍</td>
+</tr>
+<tr>
+<td><strong>显卡（整体）</strong></td>
+<td><strong>+15.6%</strong></td>
+<td>1.5–1.7 倍</td>
+</tr>
+<tr>
+<td>显卡（AMD）</td>
+<td>+16.6%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>显卡（NVIDIA）</td>
+<td>+15.5%</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<ul>
+<li>10 月 26 日华强北：RTX 5060 约 4000 元、RTX 5070 8000–9000 元、RTX 5090D 约 3 万元、RTX 5090 5 万元以上。<strong>高端卡相比数月前接近翻倍。</strong></li>
+<li><strong>10 月 28 日，”十一连涨”终结</strong>：显卡大面积回调，RTX 5090D 32G 底价单日下跌约 4500 元，创历史最大单日跌幅。</li>
+<li>同日 TrendForce 更新 Q4 预测：DRAM +10%<del>15%（含 HBM 则 +15%</del>20%）、NAND +15%<del>20%、企业级 SSD +23%</del>28%。</li>
+<li>黄仁勋 10 月 22 日表态：<strong>2029 年之前内存不太可能供过于求。</strong></li>
+<li>IDC：存储芯片价格较去年上涨约 <strong>350%</strong>，涨势放缓但仍在上行。Q3 全球手机出货 -22%，创单季最大跌幅——高价已经压碎需求。</li>
+</ul>
+<p><strong>本月关键词：涨幅见顶，价格没见顶。</strong></p>
+<h3 id="11-月（当下）｜高位横盘，双十一成唯一窗口"><a href="#11-月（当下）｜高位横盘，双十一成唯一窗口" class="headerlink" title="11 月（当下）｜高位横盘，双十一成唯一窗口"></a>11 月（当下）｜高位横盘，双十一成唯一窗口</h3><ul>
+<li>涨幅全面收窄至个位数，DDR5 基本”涨不动”，但价位仍在 5 倍区间。</li>
+<li>显卡渠道报价只对当天有效，商家普遍不敢囤货，改为订单驱动采购。</li>
+<li>传闻英伟达年内不再上调显存价，价格可能在 Q4 末企稳——<strong>企稳不等于回落</strong>。</li>
+<li>RTX 50 Super 仍无发布日：最新传闻是 RTX 5080 24GB 于 2027 年 Q1 上市。<strong>2026 年英伟达全年未发布任何新款消费级游戏显卡，为其三十年来首次。</strong></li>
+<li>游戏显卡产能削减幅度最高达 40%，RTX 60 系列推迟至 2028 年。</li>
+</ul>
+<p><strong>本月关键词：横盘，等待 2027 下半年。</strong></p>
+<h2 id="三、三条传导链，解释了全部差异"><a href="#三、三条传导链，解释了全部差异" class="headerlink" title="三、三条传导链，解释了全部差异"></a>三、三条传导链，解释了全部差异</h2><h3 id="链路-A：内存-→-显卡（直接、无缓冲）"><a href="#链路-A：内存-→-显卡（直接、无缓冲）" class="headerlink" title="链路 A：内存 → 显卡（直接、无缓冲）"></a>链路 A：内存 → 显卡（直接、无缓冲）</h3><p>板卡厂不能自行采购便宜显存，GPU 套装由英伟达统一配货。原厂上调显存报价，成本当月经由套装直达板卡厂，<strong>中间没有任何缓冲环节</strong>。所以显卡的涨价是”通知式”的：今天发通知封仓，明天零售价就变。</p>
+<p>对比内存模组厂：它们可以在现货市场择机采购、用低价库存平滑成本，传导是渐进式的。<strong>这就是为什么显卡涨幅能在一个月内吃掉内存半年的涨幅。</strong></p>
+<h3 id="链路-B：NAND-→-SSD（滞后-4–8-周，且有品牌缓冲）"><a href="#链路-B：NAND-→-SSD（滞后-4–8-周，且有品牌缓冲）" class="headerlink" title="链路 B：NAND → SSD（滞后 4–8 周，且有品牌缓冲）"></a>链路 B：NAND → SSD（滞后 4–8 周，且有品牌缓冲）</h3><p>合约价先动，零售价滞后 4—8 周。品牌商靠压薄毛利、换低配颗粒、砍促销来吸收一部分，所以零售涨幅（约 1.7 倍）远小于合约涨幅（约 3 倍）。反过来说，<strong>零售价也不会快速回落</strong>——品牌还在消化前期高价库存。</p>
+<h3 id="链路-C：SSD-太贵-→-HDD-被反推（双向挤压）"><a href="#链路-C：SSD-太贵-→-HDD-被反推（双向挤压）" class="headerlink" title="链路 C：SSD 太贵 → HDD 被反推（双向挤压）"></a>链路 C：SSD 太贵 → HDD 被反推（双向挤压）</h3><p>高容量 SSD 缺货涨价，单位 TB 成本倒回机械盘，本该流向闪存的需求落到 HDD 上。同时 HDD 自身也吃紧：单块盘上的 DRAM 缓存和控制器同样受存储涨价影响，制造成本独立上升。结果：</p>
+<ul>
+<li>全球仅剩三家 HDD 厂，扩产周期以年计。</li>
+<li>交期从数周拉长到 <strong>52 周以上</strong>，部分企业盘排到 2 年。</li>
+<li>2026 年 Q2 全行业 HDD 营收同比 <strong>+47%</strong>，出货容量 +29%——<strong>营收增速高于容量增速，说明涨价与产品结构升级在同时发生。</strong></li>
+</ul>
+<h2 id="四、这轮和以往不一样的地方"><a href="#四、这轮和以往不一样的地方" class="headerlink" title="四、这轮和以往不一样的地方"></a>四、这轮和以往不一样的地方</h2><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>2017—2018 内存涨价</th>
+<th>2021 显卡矿潮</th>
+<th>2026 本轮</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>驱动</td>
+<td>手机需求 + 扩产滞后</td>
+<td>加密货币挖矿</td>
+<td><strong>AI 数据中心产能再分配</strong></td>
+</tr>
+<tr>
+<td>传导路径</td>
+<td>内存单点</td>
+<td>显卡单点</td>
+<td><strong>内存→显卡→SSD→HDD 全链</strong></td>
+</tr>
+<tr>
+<td>需求端</td>
+<td>真实需求增长</td>
+<td>投机性扫货</td>
+<td>真实需求 + 终端购买力被摧毁</td>
+</tr>
+<tr>
+<td>供给弹性</td>
+<td>1—2 年</td>
+<td>1 年</td>
+<td><strong>3—5 年（建厂周期）</strong></td>
+</tr>
+<tr>
+<td>结束方式</td>
+<td>扩产落地</td>
+<td>币价崩盘</td>
+<td>尚无明确出口，机构普遍指向 2027H2—2028</td>
+</tr>
+</tbody></table>
+<p>关键差异在最后一行：矿潮可以靠币价一夜结束，<strong>产能再分配不会</strong>。TrendForce 判断 2027 年下半年才有实质缓解；Intel CEO 的说法是”2028 年之前无缓解”；美光 CEO 的说法是”看不到平衡点”；黄仁勋给到 2029 年。</p>
+<h2 id="五、对装机的实际含义"><a href="#五、对装机的实际含义" class="headerlink" title="五、对装机的实际含义"></a>五、对装机的实际含义</h2><ol>
+<li><strong>刚需现在买，非刚需等 2027H2。</strong> 涨幅收窄是事实，但所有机构的前瞻都指向”高位横盘”而非”回落”。11 月 27 日黑五 &#x2F; 双十一是本轮唯一确定的折扣窗口，且要拿真实成交价比，别对虚标原价。</li>
+<li><strong>优先保内存容量，显卡降一档。</strong> 内存累计涨 4—5 倍且看不到顶，显卡累计 1.5—1.7 倍（国内旗舰除外）。同样的预算，砍显卡比砍内存划算。</li>
+<li><strong>大容量存储现在别等。</strong> HDD 交期 52 周以上、2027 年产能已被长约锁死，等不到降价，只能等到没货。</li>
+<li><strong>二手不是避风港。</strong> RTX 3090 二手已回到接近首发价，大显存二手（3060 12G 等）跟涨 100—200 元。曾经的”捡漏区间”已经关闭。</li>
+<li><strong>警惕降规格。</strong> 入门整机开始用 16GB 替代 32GB、用 QLC 替代 TLC，价格看着没涨，配置在缩水。</li>
+</ol>
+<h2 id="六、数据来源"><a href="#六、数据来源" class="headerlink" title="六、数据来源"></a>六、数据来源</h2><ul>
+<li>TrendForce 季度合约价预测（2025-09 至 2026-10 各期）</li>
+<li>CFM 闪存市场：DDR5 RDIMM 月度报价、Q3 存储市场展望</li>
+<li>3DCenter 德国零售价格指数（2026-10 更新）</li>
+<li>21 世纪经济报道 &#x2F; 中新经纬 &#x2F; 中国经济网：华强北、武汉卖场实探（2026-07-31 至 08-05）</li>
+<li>第一财经华强北实探（2026-10-26）</li>
+<li>Tom’s Hardware &#x2F; ComputerBase &#x2F; VDURA Flash Volatility Index &#x2F; Fusion Worldwide 渠道报告</li>
+<li>西部数据、希捷财报电话会（2026-02、2026-07）</li>
+<li>IDC 全球手机出货与存储价格口径（2026-10）</li>
+</ul>
+<blockquote>
+<p>说明：零售价受地区、渠道、促销影响，波动剧烈；本文凡涉及单点报价均标注了采集时间与地点。合约价与零售价不可直接相减，跨口径比较请以”相对基期的倍数”为准。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://jian134.github.io/jianBlog">Muke</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jian134.github.io/jianBlog/2026/11/06/2026/11/2026%E7%9A%84PC%E5%B8%82%E5%9C%BA/">https://jian134.github.io/jianBlog/2026/11/06/2026/11/2026%E7%9A%84PC%E5%B8%82%E5%9C%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://jian134.github.io/jianBlog" target="_blank">Jian-Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/jianBlog/tags/%E7%A1%AC%E4%BB%B6/">硬件</a><a class="post-meta__tags" href="/jianBlog/tags/%E8%A3%85%E6%9C%BA/">装机</a><a class="post-meta__tags" href="/jianBlog/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a></div><div class="post-share"><div class="social-share" data-image="/jianBlog/images/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/jianBlog/2026/11/05/2026/11/Filee%E4%B8%87%E8%83%BD%E8%BD%AC%E6%8D%A2/" title="Filee 使用指南：拖一下，完成 260+ 种文件格式转换"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Filee 使用指南：拖一下，完成 260+ 种文件格式转换</div></div><div class="info-2"><div class="info-item-1"> 一句话总结：Filee 把“打开软件 → 导入文件 → 选格式 → 导出”压缩成了“按住键，把文件拖到格式图标上”。它支持图片、PDF、Office、视频、音频、电子书等 260+ 种格式，且全部在本机完成，不上传文件。    一、Filee 是什么？Filee 是一款免费开源的文件格式转换工具，GitHub 项目是 KnifeLemon/Filee。 它和常见转换软件最大的区别是：不需要先打开一个大窗口。安装后，选中文件，按住 Ctrl（Windows）或 Option（macOS），把文件拖到鼠标旁边的“环形格式菜单”，松手就能转换。 它适合这些场景：  手机拍的 HEIC 照片，转成 JPG 或 WebP 再上传博客； 把 PNG 封面压成 WebP，减小文章图片体积； Word、Excel、PPT 转 PDF； PDF 拆页、合并、压缩，或转成图片； 视频转 MP4、GIF，音频转 MP3、FLAC； EPUB、MOBI、AZW3 等电子书互转； ZIP、7Z、RAR 等压缩包解压和重新打包。  二、为什么值得装？   优点 说明    离线转换 文件不上传，适合处理隐...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/jianBlog/images/avatar.jpg" onerror="this.onerror=null;this.src='/jianBlog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Muke</div><div class="author-info-description">热爱生活，探索技术，半AI古法工程师,顺便记录美好时光</div><div class="site-data"><a href="/jianBlog/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/jianBlog/tags/"><div class="headline">标签</div><div class="length-num">72</div></a><a href="/jianBlog/categories/"><div class="headline">分类</div><div class="length-num">48</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://gitee.com/jianke3821"><i class="fab fa-github"></i><span>关注我</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！这里记录着我的技术笔记、生活感悟和有趣的发现。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E7%BB%93%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">一句话结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%88%E7%9C%8B%E6%BA%90%E5%A4%B4%EF%BC%9A%E5%86%85%E5%AD%98%E7%9A%84%E5%8D%81%E4%BA%8C%E4%B8%AA%E6%9C%88"><span class="toc-number">2.</span> <span class="toc-text">一、先看源头：内存的十二个月</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-DDR5-%E7%8E%B0%E8%B4%A7%E6%8C%87%E6%95%B0%EF%BC%883DCenter%EF%BC%8C2025-%E5%B9%B4-7-%E6%9C%88-100%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 DDR5 现货指数（3DCenter，2025 年 7 月 &#x3D; 100）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%8E%9F%E5%8E%82%E5%90%88%E7%BA%A6%E4%BB%B7%EF%BC%9A%E6%B6%A8%E5%B9%85%E8%BF%9C%E6%AF%94%E9%9B%B6%E5%94%AE%E5%89%A7%E7%83%88"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 原厂合约价：涨幅远比零售剧烈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E5%AD%A3%E5%BA%A6%E5%90%88%E7%BA%A6%E6%B6%A8%E5%B9%85%EF%BC%88TrendForce-CFM%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 季度合约涨幅（TrendForce &#x2F; CFM）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9C%88%E5%BA%A6%E6%97%B6%E9%97%B4%E7%BA%BF%EF%BC%9A%E6%98%BE%E5%8D%A1%E4%B8%8E%E7%A1%AC%E7%9B%98%E7%9A%84%E5%8D%81%E4%BA%8C%E4%B8%AA%E6%9C%88"><span class="toc-number">3.</span> <span class="toc-text">二、月度时间线：显卡与硬盘的十二个月</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%88%EF%BD%9C%E7%AC%AC%E4%B8%80%E8%BD%AE%EF%BC%9A%E6%98%BE%E5%AD%98%E5%85%88%E6%B6%A8%EF%BC%8C%E6%98%BE%E5%8D%A1%E5%B0%8F%E6%AD%A5%E8%B7%9F"><span class="toc-number">3.1.</span> <span class="toc-text">1 月｜第一轮：显存先涨，显卡小步跟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9C%88%EF%BD%9C%E4%BA%A7%E8%83%BD%E5%94%AE%E7%BD%84%E5%AE%98%E5%AE%A3"><span class="toc-number">3.2.</span> <span class="toc-text">2 月｜产能售罄官宣</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9C%88%EF%BD%9C%E5%94%AF%E4%B8%80%E7%9A%84%E5%9B%9E%E8%B0%83%EF%BC%8C%E4%B9%9F%E6%98%AF%E6%9C%80%E5%90%8E%E4%B8%80%E6%AC%A1%E6%9C%BA%E4%BC%9A"><span class="toc-number">3.3.</span> <span class="toc-text">3 月｜唯一的回调，也是最后一次机会</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%9C%88%EF%BD%9C%E4%BA%8C%E6%AC%A1%E5%86%B2%E9%AB%98"><span class="toc-number">3.4.</span> <span class="toc-text">4 月｜二次冲高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%9C%88%EF%BD%9C%E6%97%97%E8%88%B0%E5%85%88%E6%B6%A8%EF%BC%8C%E5%85%B6%E4%BD%99%E4%B8%8D%E5%8A%A8"><span class="toc-number">3.5.</span> <span class="toc-text">5 月｜旗舰先涨，其余不动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9C%88%EF%BD%9C%E9%95%BF%E7%BA%A6%E9%94%81%E6%AD%BB%E4%BA%A7%E8%83%BD"><span class="toc-number">3.6.</span> <span class="toc-text">6 月｜长约锁死产能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%9C%88%EF%BD%9C%E5%88%86%E6%B0%B4%E5%B2%AD%EF%BC%9A%E6%98%BE%E5%8D%A1%E5%85%A8%E7%B3%BB%E6%8F%90%E4%BB%B7"><span class="toc-number">3.7.</span> <span class="toc-text">7 月｜分水岭：显卡全系提价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%9C%88%EF%BD%9C%E5%85%A8%E7%BA%BF%E6%8A%A5%E4%BB%B7%E9%87%8D%E4%BC%B0"><span class="toc-number">3.8.</span> <span class="toc-text">8 月｜全线报价重估</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%9C%88%EF%BD%9C%E6%98%BE%E5%AD%98%E6%96%AD%E4%BE%9B%EF%BC%8C%E7%AC%AC%E4%B8%89%E4%BB%A3%E6%98%BE%E5%AD%98%E5%81%9C%E4%BA%A7"><span class="toc-number">3.9.</span> <span class="toc-text">9 月｜显存断供，第三代显存停产</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%9C%88%EF%BD%9C%E6%B6%A8%E5%B9%85%E6%94%B6%E7%AA%84%EF%BC%8C%E7%84%B6%E5%90%8E%E5%8D%95%E6%97%A5%E6%9A%B4%E8%B7%8C"><span class="toc-number">3.10.</span> <span class="toc-text">10 月｜涨幅收窄，然后单日暴跌</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%9C%88%EF%BC%88%E5%BD%93%E4%B8%8B%EF%BC%89%EF%BD%9C%E9%AB%98%E4%BD%8D%E6%A8%AA%E7%9B%98%EF%BC%8C%E5%8F%8C%E5%8D%81%E4%B8%80%E6%88%90%E5%94%AF%E4%B8%80%E7%AA%97%E5%8F%A3"><span class="toc-number">3.11.</span> <span class="toc-text">11 月（当下）｜高位横盘，双十一成唯一窗口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%B8%89%E6%9D%A1%E4%BC%A0%E5%AF%BC%E9%93%BE%EF%BC%8C%E8%A7%A3%E9%87%8A%E4%BA%86%E5%85%A8%E9%83%A8%E5%B7%AE%E5%BC%82"><span class="toc-number">4.</span> <span class="toc-text">三、三条传导链，解释了全部差异</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF-A%EF%BC%9A%E5%86%85%E5%AD%98-%E2%86%92-%E6%98%BE%E5%8D%A1%EF%BC%88%E7%9B%B4%E6%8E%A5%E3%80%81%E6%97%A0%E7%BC%93%E5%86%B2%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">链路 A：内存 → 显卡（直接、无缓冲）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF-B%EF%BC%9ANAND-%E2%86%92-SSD%EF%BC%88%E6%BB%9E%E5%90%8E-4%E2%80%938-%E5%91%A8%EF%BC%8C%E4%B8%94%E6%9C%89%E5%93%81%E7%89%8C%E7%BC%93%E5%86%B2%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">链路 B：NAND → SSD（滞后 4–8 周，且有品牌缓冲）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF-C%EF%BC%9ASSD-%E5%A4%AA%E8%B4%B5-%E2%86%92-HDD-%E8%A2%AB%E5%8F%8D%E6%8E%A8%EF%BC%88%E5%8F%8C%E5%90%91%E6%8C%A4%E5%8E%8B%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">链路 C：SSD 太贵 → HDD 被反推（双向挤压）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BF%99%E8%BD%AE%E5%92%8C%E4%BB%A5%E5%BE%80%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="toc-number">5.</span> <span class="toc-text">四、这轮和以往不一样的地方</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%AF%B9%E8%A3%85%E6%9C%BA%E7%9A%84%E5%AE%9E%E9%99%85%E5%90%AB%E4%B9%89"><span class="toc-number">6.</span> <span class="toc-text">五、对装机的实际含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%BA%90"><span class="toc-number">7.</span> <span class="toc-text">六、数据来源</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/11/06/2026/11/2026%E7%9A%84PC%E5%B8%82%E5%9C%BA/" title="2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨">2026 硬件涨价编年史：内存点火，显卡接力，硬盘补涨</a><time datetime="2026-11-06T08:45:00.000Z" title="发表于 2026-11-06 16:45:00">2026-11-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/11/05/2026/11/Filee%E4%B8%87%E8%83%BD%E8%BD%AC%E6%8D%A2/" title="Filee 使用指南：拖一下，完成 260+ 种文件格式转换">Filee 使用指南：拖一下，完成 260+ 种文件格式转换</a><time datetime="2026-11-05T02:00:00.000Z" title="发表于 2026-11-05 10:00:00">2026-11-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/11/05/2026/11/%E9%80%BC%E5%93%A5%E8%A2%AB%E9%80%BC%E8%B5%B0/" title="逼哥被逼走">逼哥被逼走</a><time datetime="2026-11-04T16:00:00.000Z" title="发表于 2026-11-05 00:00:00">2026-11-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/11/04/2026/11/%E7%99%BD%E5%AB%96QwenPaw/" title="QwenPaw 踩坑记录">QwenPaw 踩坑记录</a><time datetime="2026-11-03T16:00:00.000Z" title="发表于 2026-11-04 00:00:00">2026-11-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/jianBlog/2026/06/15/2026/05/%E6%B7%B1%E5%9C%B3%E5%AE%B6%E6%94%BF%E5%A4%AA%E6%81%90%E6%80%96/" title="深圳家政太恐怖">深圳家政太恐怖</a><time datetime="2026-06-14T16:00:00.000Z" title="发表于 2026-06-15 00:00:00">2026-06-15</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/jianBlog/img/foot.png);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Muke</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.0</a></span></div><div class="footer_custom_text">感谢您的访问，希望您喜欢这个博客！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/jianBlog/js/utils.js"></script><script src="/jianBlog/js/main.js"></script><div class="js-pjax"></div><script src="/js/random-banner.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
